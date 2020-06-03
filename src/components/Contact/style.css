@@ -1,0 +1,50 @@
+.container-contact-text {
+    text-align: center;
+    font-size: 16.5px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+.container-form {
+    margin: 0 auto;
+    background-color: #141313;
+    padding: 20px;
+    width: 960px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    font-family: 'Fira Code', monospace;
+    opacity: 0.95;
+}
+.col-25 {
+    float: left;
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 2%;
+    font-size: 15px;
+} 
+.col-75 {
+    float: left;
+    width: 100%;
+    font-size: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  input[type=submit] {
+    margin: 0 auto;
+    width:25%;
+    background-color: white;
+    color: black;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
