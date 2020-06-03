@@ -1,0 +1,15 @@
+.footer {
+    margin: 0 auto;
+    padding-top: 15px;
+    background-color: #141313;
+    width: 100%;
+    text-align: center;
+    align-items: initial;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    font-family: 'Fira Code', monospace;
+    opacity: 0.95;
+    color: white;
+    font-size: 15px;
+}

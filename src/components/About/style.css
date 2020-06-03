@@ -1,0 +1,30 @@
+.container-about {
+    margin: 0 auto;    
+    background-color: #141313;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    opacity: 0.95;
+    width: 960px;
+    padding: 1%;
+}
+
+body {
+    background-image: url(./images/code.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-left: 18%;
+    font-size: 35px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}
+
+.container-text {
+    font-size: 15px;
+    font-family: 'Fira Code', monospace;
+    color: white;
+}

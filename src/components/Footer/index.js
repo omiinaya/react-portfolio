@@ -7,7 +7,7 @@ function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-            <p>Footer Page</p>
+              <p>Copyright © 2019 Omar Minaya. All rights reserved.</p>
           </div>
         </div>
       </div>
