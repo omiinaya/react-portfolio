@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/react-portfolio/static/css/main.318877dd.chunk.css",
+    "main.js": "/react-portfolio/static/js/main.5db7aec6.chunk.js",
+    "main.js.map": "/react-portfolio/static/js/main.5db7aec6.chunk.js.map",
+    "runtime-main.js": "/react-portfolio/static/js/runtime-main.213b1880.js",
+    "runtime-main.js.map": "/react-portfolio/static/js/runtime-main.213b1880.js.map",
+    "static/css/2.f3cffc9e.chunk.css": "/react-portfolio/static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.cc09db3b.chunk.js": "/react-portfolio/static/js/2.cc09db3b.chunk.js",
+    "static/js/2.cc09db3b.chunk.js.map": "/react-portfolio/static/js/2.cc09db3b.chunk.js.map",
+    "index.html": "/react-portfolio/index.html",
+    "precache-manifest.10ca2bbcaf0b7cac019eec365c0ebebd.js": "/react-portfolio/precache-manifest.10ca2bbcaf0b7cac019eec365c0ebebd.js",
+    "service-worker.js": "/react-portfolio/service-worker.js",
+    "static/css/2.f3cffc9e.chunk.css.map": "/react-portfolio/static/css/2.f3cffc9e.chunk.css.map",
+    "static/css/main.318877dd.chunk.css.map": "/react-portfolio/static/css/main.318877dd.chunk.css.map",
+    "static/js/2.cc09db3b.chunk.js.LICENSE.txt": "/react-portfolio/static/js/2.cc09db3b.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/react-portfolio/static/media/code.c00f4c9d.jpg",
+    "static/media/dayplanner.png": "/react-portfolio/static/media/dayplanner.6828e829.png",
+    "static/media/lights.jpeg": "/react-portfolio/static/media/lights.09e969ca.jpeg",
+    "static/media/omar.jpg": "/react-portfolio/static/media/omar.ee9e466c.jpg",
+    "static/media/project1.png": "/react-portfolio/static/media/project1.f3b597a4.png",
+    "static/media/pwdgen.png": "/react-portfolio/static/media/pwdgen.992b7983.png",
+    "static/media/timedquiz.png": "/react-portfolio/static/media/timedquiz.464bddca.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.213b1880.js",
+    "static/css/2.f3cffc9e.chunk.css",
+    "static/js/2.cc09db3b.chunk.js",
+    "static/css/main.318877dd.chunk.css",
+    "static/js/main.5db7aec6.chunk.js"
+  ]
+}
