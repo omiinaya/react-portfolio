@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
+import { smoothScrollTo } from '../utils/smoothScroll';
 import '../styles/theme.css';
 
 const Header: React.FC = () => {
   const { isDarkMode, toggleTheme } = useTheme();
+
+  const handleNavClick = useCallback((targetId: string) => {
+    smoothScrollTo(targetId, {
+      duration: 1000,
+      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+      offset: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80
+    });
+  }, []);
 
   return (
     <header className="header">
@@ -14,11 +23,11 @@ const Header: React.FC = () => {
           </div>
           
           <div className="nav-menu">
-            <a href="#about" className="nav-link">About</a>
-            <a href="#experience" className="nav-link">Experience</a>
-            <a href="#projects" className="nav-link">Projects</a>
-            <a href="#certifications" className="nav-link">Certifications</a>
-            <a href="#contact" className="nav-link">Contact</a>
+            <button onClick={() => handleNavClick('#about')} className="nav-link">About</button>
+            <button onClick={() => handleNavClick('#experience')} className="nav-link">Experience</button>
+            <button onClick={() => handleNavClick('#projects')} className="nav-link">Projects</button>
+            <button onClick={() => handleNavClick('#certifications')} className="nav-link">Certifications</button>
+            <button onClick={() => handleNavClick('#contact')} className="nav-link">Contact</button>
           </div>
           
           <div className="nav-actions">

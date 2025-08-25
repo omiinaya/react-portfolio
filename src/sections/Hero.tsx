@@ -1,6 +1,15 @@
 import React from 'react';
+import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Hero: React.FC = () => {
+  const handleScrollTo = (targetId: string) => {
+    smoothScrollTo(targetId, {
+      duration: 1000,
+      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+      offset: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80
+    });
+  };
+
   return (
     <section id="hero" className="hero section">
       <div className="container">
@@ -11,16 +20,16 @@ const Hero: React.FC = () => {
             </h1>
             <h2 className="hero-subtitle">Full Stack Developer</h2>
             <p className="hero-description">
-              Passionate about creating innovative web solutions with modern technologies. 
+              Passionate about creating innovative web solutions with modern technologies.
               I love turning complex problems into simple, beautiful, and intuitive designs.
             </p>
             <div className="hero-actions">
-              <a href="#projects" className="btn btn-primary">
+              <button onClick={() => handleScrollTo('#projects')} className="btn btn-primary">
                 View My Work
-              </a>
-              <a href="#contact" className="btn">
+              </button>
+              <button onClick={() => handleScrollTo('#contact')} className="btn">
                 Get In Touch
-              </a>
+              </button>
             </div>
           </div>
           <div className="hero-image">

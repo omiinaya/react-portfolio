@@ -124,7 +124,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: var(--header-height); /* Account for fixed header height */
 }
 
@@ -254,6 +253,10 @@ p {
   transition: color var(--transition-fast);
   position: relative;
   padding: var(--spacing-2) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .nav-link:hover {
