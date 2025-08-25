@@ -18,7 +18,8 @@
   "about": {
     "title": "Acerca de Mí",
     "description": "Soy un desarrollador full-stack dedicado con pasión por crear aplicaciones web eficientes y escalables. Con experiencia en tecnologías frontend y backend, disfruto resolver problemas complejos y entregar soluciones de alta calidad.",
-    "skills": "Habilidades y Tecnologías"
+    "skills": "Habilidades y Tecnologías",
+    "socials": "Conéctate Conmigo"
   },
   "experience": {
     "title": "Experiencia",

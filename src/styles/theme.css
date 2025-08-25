@@ -674,6 +674,56 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+/* Social Links Styles */
+.social-links {
+  margin: var(--spacing-8) 0;
+}
+
+.socials-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-4);
+  color: hsl(var(--primary));
+}
+
+.socials-grid {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.social-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+  border: 1px solid hsl(var(--border));
+}
+
+.social-tag:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 768px) {
+  .socials-grid {
+    justify-content: center;
+  }
+  
+  .social-link {
+    padding: var(--spacing-1) var(--spacing-2);
+    font-size: 0.8rem;
+  }
+}
+
 /* Experience section styles */
 .experience-list {
   display: flex;

@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useData } from '../contexts/DataContext';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
+  const { profile } = useData();
   const skills = [
     'React',
     'TypeScript',
@@ -23,6 +25,7 @@ const About: React.FC = () => {
             <p className="about-description">
               {t('about.description')}
             </p>
+            
             <div className="skills">
               <h3 className="skills-title">{t('about.skills')}</h3>
               <div className="skills-grid">
