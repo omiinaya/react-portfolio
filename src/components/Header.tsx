@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import { smoothScrollTo } from '../utils/smoothScroll';
+import { smoothScrollTo, scrollToTop } from '../utils/smoothScroll';
 import '../styles/theme.css';
 
 const Header: React.FC = () => {
@@ -14,12 +14,25 @@ const Header: React.FC = () => {
     });
   }, []);
 
+  const handleLogoClick = useCallback(() => {
+    scrollToTop({
+      duration: 1000,
+      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+    });
+  }, []);
+
   return (
     <header className="header">
       <div className="container">
         <nav className="nav">
           <div className="nav-brand">
-            <h1 className="logo">Portfolio</h1>
+            <button
+              onClick={handleLogoClick}
+              className="logo-button"
+              aria-label="Scroll to top"
+            >
+              <h1 className="logo">Portfolio</h1>
+            </button>
           </div>
           
           <div className="nav-menu">

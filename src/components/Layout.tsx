@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import BackToTop from './BackToTop';
 import { ThemeProvider } from '../contexts/ThemeContext';
 
 interface LayoutProps {
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {children}
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </ThemeProvider>
   );
