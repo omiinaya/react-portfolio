@@ -1,0 +1,399 @@
+{
+  "basics": {
+    "name": "Omar",
+    "headline": "Full Stack Developer",
+    "email": "omar@mrxlab.net",
+    "location": "Miami, FL",
+    "url": {
+      "label": "",
+      "href": "https://mrxlab.net"
+    },
+    "customFields": [],
+    "picture": {
+      "url": "",
+      "size": 120,
+      "aspectRatio": 1,
+      "borderRadius": 0,
+      "effects": {
+        "hidden": false,
+        "border": true,
+        "grayscale": false
+      }
+    }
+  },
+  "sections": {
+    "summary": {
+      "name": "Summary",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "summary",
+      "content": ""
+    },
+    "awards": {
+      "name": "Awards",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "awards",
+      "items": []
+    },
+    "certifications": {
+      "name": "Certifications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "certifications",
+      "items": [
+        {
+          "id": "bfrfbcofkxvwyfxbdh79tmjd",
+          "visible": true,
+          "name": "Full Stack Developer",
+          "issuer": "University of Miami",
+          "date": "Jun 2020",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "bft89rhc79g1u35pgxen3duv",
+          "visible": true,
+          "name": "A+",
+          "issuer": "Comptia",
+          "date": "Apr 2024",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "kbz1l0971ygjz5i95jexoi50",
+          "visible": true,
+          "name": "Tech+",
+          "issuer": "Comptia",
+          "date": "Apr 2025",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "wjd2ohdezr7x7g8jh95r65f7",
+          "visible": true,
+          "name": "ITF+",
+          "issuer": "Comptia",
+          "date": "Apr 2024",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "eayy3c8m1rnibhrwfbtjx4c7",
+          "visible": true,
+          "name": "Software Development Fundamentals",
+          "issuer": "Microsoft",
+          "date": "Jun 2022",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "b1uceyrqzpwwxo5vcb0fw27y",
+          "visible": true,
+          "name": "MTA: Introduction to Python",
+          "issuer": "Microsoft",
+          "date": "Jun 2022",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "tna9qaospw88we33tziy78hu",
+          "visible": true,
+          "name": "MTA: Introduction to JavaScript",
+          "issuer": "Microsoft",
+          "date": "Jun 2022",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "v0e8k2xypx3a47ncorm6ev4x",
+          "visible": true,
+          "name": "Automation Programmer",
+          "issuer": "Control4",
+          "date": "Sept 2022",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        },
+        {
+          "id": "tlaxs6aqemgk9nf8dv1chm9v",
+          "visible": true,
+          "name": "Associate Installer",
+          "issuer": "Control4",
+          "date": "Jun 2022",
+          "summary": "",
+          "url": {
+            "label": "",
+            "href": ""
+          }
+        }
+      ]
+    },
+    "education": {
+      "name": "Education",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "education",
+      "items": []
+    },
+    "experience": {
+      "name": "Experience",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "experience",
+      "items": [
+        {
+          "id": "tmvwzq6tck2uepsd90miii82",
+          "visible": true,
+          "company": "MobileMe IT",
+          "position": "IT Technician",
+          "location": "Doral, FL",
+          "date": "April 2022 - Present",
+          "summary": "<ol><li><p>Repair laptops brought in by clients, schools and other organizations.</p></li><li><p>In person, on-site, over the phone and remote technical support.</p></li></ol>",
+          "url": {
+            "label": "",
+            "href": "https://mobilemeit.com/"
+          }
+        },
+        {
+          "id": "tbebik49prpirmquxubpuay2",
+          "visible": true,
+          "company": "Miami-Dade County Public Schools",
+          "position": "Full Stack Developer",
+          "location": "Miami, FL",
+          "date": "Aug 2022 - July 2023",
+          "summary": "<ol><li><p>Developed applications that helped teachers visualize student grades and pinpoint performance gaps.</p></li></ol>",
+          "url": {
+            "label": "",
+            "href": "https://www3.dadeschools.net/"
+          }
+        },
+        {
+          "id": "gfeh5hmlf0h8x0txc0yucyao",
+          "visible": true,
+          "company": "OriginPC",
+          "position": "Computer Manufacturing Technician",
+          "location": "Miami, FL",
+          "date": "Feb 2021 - Jan 2022",
+          "summary": "<ol><li><p>Built high-end computers for enthusiasts, influencers and many others.</p></li><li><p>Installed operating systems, drivers and other updates.</p></li><li><p>Performed quality assurance on systems before shipping to customers.</p></li></ol>",
+          "url": {
+            "label": "",
+            "href": "https://www.originpc.com/"
+          }
+        },
+        {
+          "id": "uyxbov22pnmpiyjfjdrl4qa0",
+          "visible": true,
+          "company": "Union University",
+          "position": "IT Support Technician",
+          "location": "Jackson, TN",
+          "date": "Jan 2015 - Dec 2017",
+          "summary": "<ol><li><p>Provided in person and over the phone tech support to students, faculty and visitors of the university.</p></li><li><p>Set up and maintained computers, printers and other devices.</p></li></ol>",
+          "url": {
+            "label": "",
+            "href": "https://uu.edu/"
+          }
+        }
+      ]
+    },
+    "volunteer": {
+      "name": "Volunteering",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "volunteer",
+      "items": []
+    },
+    "interests": {
+      "name": "Interests",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "interests",
+      "items": []
+    },
+    "languages": {
+      "name": "Languages",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "languages",
+      "items": [
+        {
+          "id": "c6zeokdhrcb1wqyctoix8q7s",
+          "visible": true,
+          "name": "English",
+          "description": "",
+          "level": 5
+        },
+        {
+          "id": "t206xzy3huqxmyf8ghdmid6r",
+          "visible": true,
+          "name": "Spanish",
+          "description": "",
+          "level": 5
+        }
+      ]
+    },
+    "profiles": {
+      "name": "Profiles",
+      "columns": 3,
+      "separateLinks": true,
+      "visible": true,
+      "id": "profiles",
+      "items": [
+        {
+          "id": "ck0stizx1mdcmb601r868q8y",
+          "visible": true,
+          "network": "GitHub",
+          "username": "omiinaya",
+          "icon": "github",
+          "url": {
+            "label": "",
+            "href": "https://github.com/omiinaya"
+          }
+        },
+        {
+          "id": "du1vl2pefwgzh33t8d4ibval",
+          "visible": true,
+          "network": "X",
+          "username": "omiinaya",
+          "icon": "x",
+          "url": {
+            "label": "",
+            "href": "https://x.com/omiinaya"
+          }
+        },
+        {
+          "id": "edc19et5rzb48bqcsehkh8n8",
+          "visible": true,
+          "network": "LinkedIn",
+          "username": "omiinaya",
+          "icon": "linkedin",
+          "url": {
+            "label": "",
+            "href": "https://www.linkedin.com/in/omiinaya/"
+          }
+        }
+      ]
+    },
+    "projects": {
+      "name": "Projects",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "projects",
+      "items": []
+    },
+    "publications": {
+      "name": "Publications",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "publications",
+      "items": []
+    },
+    "references": {
+      "name": "References",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "references",
+      "items": []
+    },
+    "skills": {
+      "name": "Skills",
+      "columns": 1,
+      "separateLinks": true,
+      "visible": true,
+      "id": "skills",
+      "items": []
+    },
+    "custom": {}
+  },
+  "metadata": {
+    "template": "azurill",
+    "layout": [
+      [
+        [
+          "profiles",
+          "summary",
+          "experience",
+          "education",
+          "projects",
+          "volunteer",
+          "references"
+        ],
+        [
+          "skills",
+          "interests",
+          "certifications",
+          "awards",
+          "publications",
+          "languages"
+        ]
+      ]
+    ],
+    "css": {
+      "value": "* {\n\toutline: 1px solid #000;\n\toutline-offset: 4px;\n}",
+      "visible": false
+    },
+    "page": {
+      "margin": 18,
+      "format": "a4",
+      "options": {
+        "breakLine": true,
+        "pageNumbers": true
+      }
+    },
+    "theme": {
+      "background": "#ffffff",
+      "text": "#000000",
+      "primary": "#475569"
+    },
+    "typography": {
+      "font": {
+        "family": "IBM Plex Serif",
+        "subset": "latin",
+        "variants": [
+          "regular",
+          "italic",
+          "600"
+        ],
+        "size": 14
+      },
+      "lineHeight": 1.5,
+      "hideIcons": false,
+      "underlineLinks": true
+    },
+    "notes": ""
+  }
+}

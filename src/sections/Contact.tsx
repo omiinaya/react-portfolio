@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useData } from '../contexts/DataContext';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
+  const { profile } = useData();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,11 +39,11 @@ const Contact: React.FC = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <strong>{t('contact.email')}:</strong>
-                <a href="mailto:contact@example.com">contact@example.com</a>
+                <a href={`mailto:${profile.basics.email}`}>{profile.basics.email}</a>
               </div>
               <div className="contact-item">
                 <strong>{t('contact.location')}:</strong>
-                <span>{t('contact.locationValue')}</span>
+                <span>{profile.basics.location}</span>
               </div>
             </div>
           </div>

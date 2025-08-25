@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { smoothScrollTo } from '../utils/smoothScroll';
+import { useData } from '../contexts/DataContext';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
+  const { profile } = useData();
   const handleScrollTo = (targetId: string) => {
     smoothScrollTo(targetId, {
       duration: 1000,
@@ -18,9 +20,9 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              {t('hero.greeting')} <span className="text-primary">{t('hero.name')}</span>
+              {t('hero.greeting')} <span className="text-primary">{profile.basics.name}</span>
             </h1>
-            <h2 className="hero-subtitle">{t('hero.title')}</h2>
+            <h2 className="hero-subtitle">{profile.basics.headline}</h2>
             <p className="hero-description">
               {t('hero.description')}
             </p>
