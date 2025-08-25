@@ -433,14 +433,19 @@ p {
   border: 2px solid hsl(var(--border));
   box-shadow: var(--shadow-xl);
   overflow: hidden;
+  position: relative;
 }
 
 .image-placeholder::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, transparent 40%, hsl(var(--primary) / 0.1) 50%, transparent 60%);
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%);
   animation: shimmer 3s infinite;
+  transform: translateX(0%);
 }
 
 @keyframes shimmer {
@@ -674,9 +679,13 @@ p {
 .project-image::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(45deg, transparent 40%, hsl(var(--primary) / 0.1) 50%, transparent 60%);
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%);
   animation: shimmer 3s infinite;
+  transform: translateX(0%);
 }
 
 .project-content {
