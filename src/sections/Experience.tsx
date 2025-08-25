@@ -7,38 +7,26 @@ const Experience: React.FC = () => {
   const experiences: ExperienceType[] = [
     {
       id: '1',
-      company: 'TechCorp Inc.',
-      position: 'Senior Full Stack Developer',
-      period: '2022 - Present',
-      description: [
-        'Led development of a microservices architecture serving 100k+ users',
-        'Implemented CI/CD pipelines reducing deployment time by 60%',
-        'Mentored junior developers and conducted code reviews'
-      ],
+      company: t('experience.companies.techcorp'),
+      position: t('experience.positions.seniorFullStack'),
+      period: `2022 - ${t('experience.present')}`,
+      description: t('experience.descriptions.techcorp', { returnObjects: true }) as string[],
       technologies: ['React', 'Node.js', 'AWS', 'Docker', 'PostgreSQL']
     },
     {
       id: '2',
-      company: 'StartupXYZ',
-      position: 'Frontend Developer',
+      company: t('experience.companies.startupxyz'),
+      position: t('experience.positions.frontendDeveloper'),
       period: '2020 - 2022',
-      description: [
-        'Built responsive user interfaces with React and TypeScript',
-        'Collaborated with designers to implement pixel-perfect UIs',
-        'Optimized application performance reducing load time by 40%'
-      ],
+      description: t('experience.descriptions.startupxyz', { returnObjects: true }) as string[],
       technologies: ['React', 'TypeScript', 'CSS3', 'GraphQL']
     },
     {
       id: '3',
-      company: 'DevStudio',
-      position: 'Junior Developer',
+      company: t('experience.companies.devstudio'),
+      position: t('experience.positions.juniorDeveloper'),
       period: '2019 - 2020',
-      description: [
-        'Developed and maintained web applications using modern frameworks',
-        'Participated in agile development processes',
-        'Contributed to open source projects'
-      ],
+      description: t('experience.descriptions.devstudio', { returnObjects: true }) as string[],
       technologies: ['JavaScript', 'React', 'Python', 'MySQL']
     }
   ];

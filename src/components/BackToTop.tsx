@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { scrollToTop } from '../utils/smoothScroll';
 import '../styles/theme.css';
 
 const BackToTop: React.FC = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const BackToTop: React.FC = () => {
     <button
       className={`back-to-top ${isVisible ? 'back-to-top--visible' : ''}`}
       onClick={handleClick}
-      aria-label="Scroll back to top"
+      aria-label={t('backToTop.ariaLabel')}
     >
       <svg
         width="20"

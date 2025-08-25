@@ -14,13 +14,13 @@ const Footer: React.FC = () => {
           </div>
           <div className="footer-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-              GitHub
+              {t('footer.github')}
             </a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-              LinkedIn
+              {t('footer.linkedin')}
             </a>
             <a href="mailto:contact@example.com" className="footer-link">
-              Email
+              {t('footer.email')}
             </a>
           </div>
         </div>

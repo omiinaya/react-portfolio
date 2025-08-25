@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              {t('hero.greeting')} <span className="text-primary">Developer</span>
+              {t('hero.greeting')} <span className="text-primary">{t('hero.name')}</span>
             </h1>
             <h2 className="hero-subtitle">{t('hero.title')}</h2>
             <p className="hero-description">

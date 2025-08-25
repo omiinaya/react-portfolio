@@ -29,6 +29,49 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      // Polyfill for :focus-visible in older browsers
+      (function() {
+        // Check if :focus-visible is supported
+        try {
+          document.querySelector(':focus-visible');
+        } catch (error) {
+          // Add class when keyboard is used for navigation
+          document.addEventListener('keydown', function() {
+            document.body.classList.add('keyboard-navigation');
+          });
+          
+          document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+          });
+          
+          // Add fallback CSS for older browsers
+          var style = document.createElement('style');
+          style.textContent = `
+            .keyboard-navigation .nav-link:focus,
+            .keyboard-navigation .theme-toggle:focus,
+            .keyboard-navigation .language-toggle:focus,
+            .keyboard-navigation .logo-button:focus,
+            .keyboard-navigation .form-group input:focus,
+            .keyboard-navigation .form-group textarea:focus,
+            .keyboard-navigation .btn:focus,
+            .keyboard-navigation .footer-link:focus {
+              outline: 2px solid hsl(var(--primary));
+              outline-offset: 2px;
+              border-radius: var(--radius);
+            }
+            
+            .keyboard-navigation .form-group input:focus,
+            .keyboard-navigation .form-group textarea:focus {
+              outline: none;
+              border-color: hsl(var(--ring));
+              box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+            }
+          `;
+          document.head.appendChild(style);
+        }
+      })();
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

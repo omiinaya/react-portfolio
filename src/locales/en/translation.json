@@ -10,6 +10,7 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
+    "name": "Developer",
     "title": "Full Stack Developer",
     "description": "Passionate about creating innovative web solutions with modern technologies. I specialize in React, Node.js, and cloud technologies.",
     "cta": "View My Work"
@@ -21,15 +22,61 @@
   },
   "experience": {
     "title": "Experience",
-    "present": "Present"
+    "present": "Present",
+    "companies": {
+      "techcorp": "TechCorp Inc.",
+      "startupxyz": "StartupXYZ",
+      "devstudio": "DevStudio"
+    },
+    "positions": {
+      "seniorFullStack": "Senior Full Stack Developer",
+      "frontendDeveloper": "Frontend Developer",
+      "juniorDeveloper": "Junior Developer"
+    },
+    "descriptions": {
+      "techcorp": [
+        "Led development of a microservices architecture serving 100k+ users",
+        "Implemented CI/CD pipelines reducing deployment time by 60%",
+        "Mentored junior developers and conducted code reviews"
+      ],
+      "startupxyz": [
+        "Built responsive user interfaces with React and TypeScript",
+        "Collaborated with designers to implement pixel-perfect UIs",
+        "Optimized application performance reducing load time by 40%"
+      ],
+      "devstudio": [
+        "Developed and maintained web applications using modern frameworks",
+        "Participated in agile development processes",
+        "Contributed to open source projects"
+      ]
+    }
   },
   "projects": {
     "title": "Projects",
     "viewProject": "View Project",
-    "viewCode": "View Code"
+    "viewCode": "View Code",
+    "items": {
+      "ecommerce": {
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard."
+      },
+      "taskManagement": {
+        "title": "Task Management App",
+        "description": "A collaborative task management application with real-time updates and team collaboration features."
+      },
+      "weather": {
+        "title": "Weather Dashboard",
+        "description": "A responsive weather application with location-based forecasts and interactive charts."
+      },
+      "portfolio": {
+        "title": "Portfolio Website",
+        "description": "A modern portfolio website with dark mode support and responsive design."
+      }
+    }
   },
   "certifications": {
     "title": "Certifications",
+    "issued": "Issued",
     "viewCertification": "View Certification"
   },
   "contact": {
@@ -38,15 +85,23 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
+    "location": "Location",
+    "locationValue": "New York, NY",
     "send": "Send Message",
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again."
   },
   "footer": {
-    "copyright": "© 2024 Portfolio. All rights reserved."
+    "copyright": "© 2024 Portfolio. All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   },
   "languages": {
     "en": "English",
     "es": "Español"
+  },
+  "backToTop": {
+    "ariaLabel": "Scroll back to top"
   }
 }

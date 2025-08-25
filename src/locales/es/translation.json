@@ -10,6 +10,7 @@
   },
   "hero": {
     "greeting": "Hola, soy",
+    "name": "Desarrollador",
     "title": "Desarrollador Full Stack",
     "description": "Apasionado por crear soluciones web innovadoras con tecnologías modernas. Me especializo en React, Node.js y tecnologías en la nube.",
     "cta": "Ver Mi Trabajo"
@@ -21,15 +22,61 @@
   },
   "experience": {
     "title": "Experiencia",
-    "present": "Presente"
+    "present": "Presente",
+    "companies": {
+      "techcorp": "TechCorp Inc.",
+      "startupxyz": "StartupXYZ",
+      "devstudio": "DevStudio"
+    },
+    "positions": {
+      "seniorFullStack": "Desarrollador Full Stack Senior",
+      "frontendDeveloper": "Desarrollador Frontend",
+      "juniorDeveloper": "Desarrollador Junior"
+    },
+    "descriptions": {
+      "techcorp": [
+        "Lideré el desarrollo de una arquitectura de microservicios que atiende a más de 100k usuarios",
+        "Implementé pipelines de CI/CD reduciendo el tiempo de despliegue en un 60%",
+        "Mentoricé desarrolladores junior y realicé revisiones de código"
+      ],
+      "startupxyz": [
+        "Construí interfaces de usuario responsivas con React y TypeScript",
+        "Colaboré con diseñadores para implementar interfaces pixel-perfect",
+        "Optimicé el rendimiento de la aplicación reduciendo el tiempo de carga en un 40%"
+      ],
+      "devstudio": [
+        "Desarrollé y mantuve aplicaciones web utilizando frameworks modernos",
+        "Participé en procesos de desarrollo ágil",
+        "Contribuí a proyectos de código abierto"
+      ]
+    }
   },
   "projects": {
     "title": "Proyectos",
     "viewProject": "Ver Proyecto",
-    "viewCode": "Ver Código"
+    "viewCode": "Ver Código",
+    "items": {
+      "ecommerce": {
+        "title": "Plataforma E-Commerce",
+        "description": "Una solución e-commerce full-stack con autenticación de usuarios, procesamiento de pagos y panel de administración."
+      },
+      "taskManagement": {
+        "title": "App de Gestión de Tareas",
+        "description": "Una aplicación colaborativa de gestión de tareas con actualizaciones en tiempo real y funciones de colaboración en equipo."
+      },
+      "weather": {
+        "title": "Panel Meteorológico",
+        "description": "Una aplicación meteorológica responsiva con pronósticos basados en ubicación y gráficos interactivos."
+      },
+      "portfolio": {
+        "title": "Sitio Web de Portafolio",
+        "description": "Un sitio web de portafolio moderno con soporte para modo oscuro y diseño responsivo."
+      }
+    }
   },
   "certifications": {
     "title": "Certificaciones",
+    "issued": "Emitido",
     "viewCertification": "Ver Certificación"
   },
   "contact": {
@@ -38,15 +85,23 @@
     "name": "Nombre",
     "email": "Correo Electrónico",
     "message": "Mensaje",
+    "location": "Ubicación",
+    "locationValue": "Nueva York, NY",
     "send": "Enviar Mensaje",
     "success": "¡Mensaje enviado con éxito!",
     "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
   },
   "footer": {
-    "copyright": "© 2024 Portafolio. Todos los derechos reservados."
+    "copyright": "© 2024 Portafolio. Todos los derechos reservados.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Correo"
   },
   "languages": {
     "en": "Inglés",
     "es": "Español"
+  },
+  "backToTop": {
+    "ariaLabel": "Desplazarse hacia arriba"
   }
 }

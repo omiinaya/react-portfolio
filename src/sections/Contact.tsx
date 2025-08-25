@@ -40,8 +40,8 @@ const Contact: React.FC = () => {
                 <a href="mailto:contact@example.com">contact@example.com</a>
               </div>
               <div className="contact-item">
-                <strong>Location:</strong>
-                <span>New York, NY</span>
+                <strong>{t('contact.location')}:</strong>
+                <span>{t('contact.locationValue')}</span>
               </div>
             </div>
           </div>

@@ -43,7 +43,7 @@ const Header: React.FC = () => {
               className="logo-button"
               aria-label="Scroll to top"
             >
-              <h1 className="logo">Portfolio</h1>
+              <h1 className="logo">{t('header.logo')}</h1>
             </button>
           </div>
           

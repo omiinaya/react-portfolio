@@ -199,6 +199,12 @@ p {
   transform: translateY(-1px);
 }
 
+.btn:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
 .btn-primary {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
@@ -278,6 +284,12 @@ p {
   width: 100%;
 }
 
+.nav-link:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -301,6 +313,12 @@ p {
   background-color: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
   transform: scale(1.05);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: var(--radius);
 }
 
 /* Language Selector Styles */
@@ -328,6 +346,12 @@ p {
   background-color: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
   transform: scale(1.05);
+}
+
+.language-toggle:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: var(--radius);
 }
 
 .language-dropdown {
@@ -435,6 +459,12 @@ p {
 
 .footer-link:hover {
   color: hsl(var(--primary));
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: var(--radius);
 }
 
 @media (max-width: 768px) {
@@ -980,8 +1010,8 @@ p {
   font-size: 0.875rem;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
   outline: none;
   border-color: hsl(var(--ring));
   box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
@@ -1059,8 +1089,9 @@ p {
   transform: scale(1.05);
 }
 
-.logo-button:focus {
-  outline: 2px solid hsl(var(--ring));
+.logo-button:focus-visible {
+  outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
   border-radius: var(--radius);
+  opacity: 0.9;
 }

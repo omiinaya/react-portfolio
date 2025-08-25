@@ -7,8 +7,8 @@ const Projects: React.FC = () => {
   const projects: Project[] = [
     {
       id: '1',
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
+      title: t('projects.items.ecommerce.title'),
+      description: t('projects.items.ecommerce.description'),
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com',
@@ -16,24 +16,24 @@ const Projects: React.FC = () => {
     },
     {
       id: '2',
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
+      title: t('projects.items.taskManagement.title'),
+      description: t('projects.items.taskManagement.description'),
       technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com'
     },
     {
       id: '3',
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts and interactive charts.',
+      title: t('projects.items.weather.title'),
+      description: t('projects.items.weather.description'),
       technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS3'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com'
     },
     {
       id: '4',
-      title: 'Portfolio Website',
-      description: 'A modern portfolio website with dark mode support and responsive design.',
+      title: t('projects.items.portfolio.title'),
+      description: t('projects.items.portfolio.description'),
       technologies: ['React', 'TypeScript', 'CSS3', 'Vite'],
       githubUrl: 'https://github.com',
       liveUrl: 'https://example.com'
