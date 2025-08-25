@@ -1,0 +1,52 @@
+{
+  "header": {
+    "logo": "Portafolio",
+    "about": "Acerca de",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "certifications": "Certificaciones",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "title": "Desarrollador Full Stack",
+    "description": "Apasionado por crear soluciones web innovadoras con tecnologías modernas. Me especializo en React, Node.js y tecnologías en la nube.",
+    "cta": "Ver Mi Trabajo"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "description": "Soy un desarrollador full-stack dedicado con pasión por crear aplicaciones web eficientes y escalables. Con experiencia en tecnologías frontend y backend, disfruto resolver problemas complejos y entregar soluciones de alta calidad.",
+    "skills": "Habilidades y Tecnologías"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Presente"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código"
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "viewCertification": "Ver Certificación"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "description": "Siempre estoy interesado en nuevas oportunidades y colaboraciones. ¡No dudes en contactarme si te gustaría trabajar juntos!",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+  },
+  "footer": {
+    "copyright": "© 2024 Portafolio. Todos los derechos reservados."
+  },
+  "languages": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}

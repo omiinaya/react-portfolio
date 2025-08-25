@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,17 +27,16 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="contact section">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">{t('contact.title')}</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <h3>Let's work together</h3>
+            <h3>{t('contact.title')}</h3>
             <p>
-              I'm always interested in new opportunities and exciting projects. 
-              Whether you have a question or just want to say hi, feel free to reach out!
+              {t('contact.description')}
             </p>
             <div className="contact-details">
               <div className="contact-item">
-                <strong>Email:</strong>
+                <strong>{t('contact.email')}:</strong>
                 <a href="mailto:contact@example.com">contact@example.com</a>
               </div>
               <div className="contact-item">
@@ -46,7 +47,7 @@ const Contact: React.FC = () => {
           </div>
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">{t('contact.name')}</label>
               <input
                 type="text"
                 id="name"
@@ -57,7 +58,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">{t('contact.email')}</label>
               <input
                 type="email"
                 id="email"
@@ -68,7 +69,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="message">Message</label>
+              <label htmlFor="message">{t('contact.message')}</label>
               <textarea
                 id="message"
                 name="message"
@@ -79,7 +80,7 @@ const Contact: React.FC = () => {
               />
             </div>
             <button type="submit" className="btn btn-primary">
-              Send Message
+              {t('contact.send')}
             </button>
           </form>
         </div>

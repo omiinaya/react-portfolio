@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const About: React.FC = () => {
+  const { t } = useTranslation();
   const skills = [
     'React',
     'TypeScript',
@@ -15,21 +17,14 @@ const About: React.FC = () => {
   return (
     <section id="about" className="about section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">{t('about.title')}</h2>
         <div className="about-content">
           <div className="about-text">
             <p className="about-description">
-              I'm a passionate full-stack developer with over 3 years of experience 
-              building scalable web applications. I enjoy solving complex problems 
-              and creating intuitive user experiences.
-            </p>
-            <p className="about-description">
-              My expertise includes modern JavaScript frameworks, cloud infrastructure, 
-              and database design. I'm always eager to learn new technologies and 
-              take on challenging projects.
+              {t('about.description')}
             </p>
             <div className="skills">
-              <h3 className="skills-title">Technologies I Work With</h3>
+              <h3 className="skills-title">{t('about.skills')}</h3>
               <div className="skills-grid">
                 {skills.map((skill, index) => (
                   <span key={index} className="skill-tag">

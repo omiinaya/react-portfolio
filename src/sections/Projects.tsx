@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
 
 const Projects: React.FC = () => {
+  const { t } = useTranslation();
   const projects: Project[] = [
     {
       id: '1',
@@ -41,7 +43,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="projects section">
       <div className="container">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title">{t('projects.title')}</h2>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card card">
@@ -79,7 +81,7 @@ const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       className="btn"
                     >
-                      Code
+                      {t('projects.viewCode')}
                     </a>
                   )}
                   {project.liveUrl && (
@@ -89,7 +91,7 @@ const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       className="btn btn-primary"
                     >
-                      Live Demo
+                      {t('projects.viewProject')}
                     </a>
                   )}
                 </div>

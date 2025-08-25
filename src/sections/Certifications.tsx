@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Certification } from '../types';
 
 const Certifications: React.FC = () => {
+  const { t } = useTranslation();
   const certifications: Certification[] = [
     {
       id: '1',
@@ -36,7 +38,7 @@ const Certifications: React.FC = () => {
   return (
     <section id="certifications" className="certifications section">
       <div className="container">
-        <h2 className="section-title">Certifications</h2>
+        <h2 className="section-title">{t('certifications.title')}</h2>
         <div className="certifications-grid">
           {certifications.map((cert) => (
             <div key={cert.id} className="certification-card card">
@@ -51,7 +53,7 @@ const Certifications: React.FC = () => {
                     rel="noopener noreferrer"
                     className="certification-link"
                   >
-                    View Credential
+                    {t('certifications.viewCertification')}
                   </a>
                 )}
               </div>

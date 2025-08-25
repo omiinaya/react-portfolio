@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -8,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-info">
-            <p>&copy; {currentYear} Portfolio. Built with React & TypeScript.</p>
+            <p>&copy; {currentYear} {t('footer.copyright')}</p>
           </div>
           <div className="footer-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="footer-link">

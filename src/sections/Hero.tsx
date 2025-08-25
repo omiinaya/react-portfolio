@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Hero: React.FC = () => {
+  const { t } = useTranslation();
   const handleScrollTo = (targetId: string) => {
     smoothScrollTo(targetId, {
       duration: 1000,
@@ -16,19 +18,18 @@ const Hero: React.FC = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Hi, I'm <span className="text-primary">Developer</span>
+              {t('hero.greeting')} <span className="text-primary">Developer</span>
             </h1>
-            <h2 className="hero-subtitle">Full Stack Developer</h2>
+            <h2 className="hero-subtitle">{t('hero.title')}</h2>
             <p className="hero-description">
-              Passionate about creating innovative web solutions with modern technologies.
-              I love turning complex problems into simple, beautiful, and intuitive designs.
+              {t('hero.description')}
             </p>
             <div className="hero-actions">
               <button onClick={() => handleScrollTo('#projects')} className="btn btn-primary">
-                View My Work
+                {t('hero.cta')}
               </button>
               <button onClick={() => handleScrollTo('#contact')} className="btn">
-                Get In Touch
+                {t('contact.title')}
               </button>
             </div>
           </div>

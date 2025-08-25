@@ -1,7 +1,9 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Experience as ExperienceType } from '../types';
 
 const Experience: React.FC = () => {
+  const { t } = useTranslation();
   const experiences: ExperienceType[] = [
     {
       id: '1',
@@ -44,7 +46,7 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="experience section">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title">{t('experience.title')}</h2>
         <div className="experience-list">
           {experiences.map((exp) => (
             <div key={exp.id} className="experience-item card">

@@ -1,10 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { smoothScrollTo, scrollToTop } from '../utils/smoothScroll';
 import '../styles/theme.css';
 
 const Header: React.FC = () => {
+  const { t, i18n } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
+  const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
 
   const handleNavClick = useCallback((targetId: string) => {
     smoothScrollTo(targetId, {
@@ -21,6 +24,15 @@ const Header: React.FC = () => {
     });
   }, []);
 
+  const handleLanguageChange = (language: string) => {
+    i18n.changeLanguage(language);
+    setIsLanguageDropdownOpen(false);
+  };
+
+  const toggleLanguageDropdown = () => {
+    setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -36,14 +48,55 @@ const Header: React.FC = () => {
           </div>
           
           <div className="nav-menu">
-            <button onClick={() => handleNavClick('#about')} className="nav-link">About</button>
-            <button onClick={() => handleNavClick('#experience')} className="nav-link">Experience</button>
-            <button onClick={() => handleNavClick('#projects')} className="nav-link">Projects</button>
-            <button onClick={() => handleNavClick('#certifications')} className="nav-link">Certifications</button>
-            <button onClick={() => handleNavClick('#contact')} className="nav-link">Contact</button>
-          </div>
+          <button onClick={() => handleNavClick('#about')} className="nav-link">{t('header.about')}</button>
+          <button onClick={() => handleNavClick('#experience')} className="nav-link">{t('header.experience')}</button>
+          <button onClick={() => handleNavClick('#projects')} className="nav-link">{t('header.projects')}</button>
+          <button onClick={() => handleNavClick('#certifications')} className="nav-link">{t('header.certifications')}</button>
+          <button onClick={() => handleNavClick('#contact')} className="nav-link">{t('header.contact')}</button>
+        </div>
           
           <div className="nav-actions">
+            {/* Language Selector */}
+            <div className="language-selector">
+              <button
+                onClick={toggleLanguageDropdown}
+                className="language-toggle"
+                aria-label={t('header.language')}
+                aria-expanded={isLanguageDropdownOpen}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </button>
+              
+              {isLanguageDropdownOpen && (
+                <div className="language-dropdown">
+                  <button
+                    onClick={() => handleLanguageChange('en')}
+                    className={`language-option ${i18n.language === 'en' ? 'active' : ''}`}
+                  >
+                    {t('languages.en')}
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange('es')}
+                    className={`language-option ${i18n.language === 'es' ? 'active' : ''}`}
+                  >
+                    {t('languages.es')}
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="theme-toggle"
