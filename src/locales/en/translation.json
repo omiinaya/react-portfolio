@@ -6,7 +6,8 @@
     "projects": "Projects",
     "certifications": "Certifications",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "github": "View GitHub Repository"
   },
   "hero": {
     "greeting": "Hello, I'm",
