@@ -68,9 +68,7 @@ This document outlines the planned enhancements for the React portfolio applicat
 **Dependencies**: Profile photo assets
 
 **Tasks:**
-- [ ] Replace placeholder with actual photo
 - [ ] Add typing animation component
-- [ ] Social media links integration
 - [ ] Call-to-action improvements
 
 ### 6. Mobile Navigation
