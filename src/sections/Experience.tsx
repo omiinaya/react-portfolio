@@ -12,7 +12,7 @@ const Experience: React.FC = () => {
         <h2 className="section-title">{t('experience.title')}</h2>
         <div className="experience-content">
           <div className="experience-list">
-           {profile.sections.experience.items.map((exp) => (
+           {profile.sections.experience.items.map((exp, index) => (
              <div key={exp.id} className="experience-item card">
                <div className="experience-header">
                  <h3 className="experience-company">{exp.company}</h3>
