@@ -163,7 +163,7 @@ p {
 }
 
 .section {
-  padding: var(--spacing-12) 0;
+  padding: 0;
 }
 
 .card {
@@ -523,10 +523,13 @@ p {
 
 /* Hero section styles */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--header-height));
   display: flex;
   align-items: center;
   position: relative;
+  padding-top: 0;
+  margin-top: calc(-1 * var(--spacing-12));
+  margin-bottom: calc(-2 * var(--spacing-12));
 }
 
 .hero-content {
@@ -540,6 +543,7 @@ p {
   font-size: 3.75rem;
   font-weight: 800;
   line-height: 1.1;
+  margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
   letter-spacing: -0.025em;
 }
@@ -724,6 +728,7 @@ p {
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
+  margin-top: var(--spacing-12);
   margin-bottom: var(--spacing-12);
   color: hsl(var(--foreground));
   letter-spacing: -0.025em;
@@ -1462,6 +1467,10 @@ p {
 .projects-grid > *:nth-child(8) { animation-delay: 560ms; }
 .projects-grid > *:nth-child(9) { animation-delay: 640ms; }
 
+#contact {
+  margin-bottom: var(--spacing-12);
+}
+
 /* Contact section styles */
 .contact-content {
   display: grid;
@@ -1730,3 +1739,4 @@ p {
   border-radius: var(--radius);
   opacity: 0.9;
 }
+

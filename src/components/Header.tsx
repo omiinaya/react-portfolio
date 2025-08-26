@@ -48,7 +48,7 @@ const Header: React.FC = () => {
           </div>
           
           <div className="nav-menu">
-          <button onClick={() => handleNavClick('#about')} className="nav-link">{t('header.about')}</button>
+          <button onClick={() => handleNavClick('#hero')} className="nav-link">{t('header.about')}</button>
           <button onClick={() => handleNavClick('#experience')} className="nav-link">{t('header.experience')}</button>
           <button onClick={() => handleNavClick('#projects')} className="nav-link">{t('header.projects')}</button>
           <button onClick={() => handleNavClick('#certifications')} className="nav-link">{t('header.certifications')}</button>
