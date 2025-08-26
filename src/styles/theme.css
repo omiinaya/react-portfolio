@@ -462,24 +462,39 @@ p {
 
 .footer-links {
   display: flex;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
 }
 
 .footer-link {
-  color: hsl(var(--muted-foreground));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
   text-decoration: none;
-  transition: color var(--transition-fast);
-  font-size: 0.875rem;
+  transition: all var(--transition-fast);
+  border: 1px solid hsl(var(--border));
 }
 
 .footer-link:hover {
-  color: hsl(var(--primary));
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .footer-link:focus-visible {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 2px;
   border-radius: var(--radius);
+}
+
+.footer-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 768px) {
@@ -740,10 +755,113 @@ p {
 }
 
 /* Experience section styles */
+.experience-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .experience-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-8);
+}
+
+/* Enhanced experience item styling to match About section aesthetics */
+.experience-item {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+}
+
+.experience-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-4);
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.experience-company {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  margin: 0;
+}
+
+.experience-period {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.experience-position {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  margin-bottom: var(--spacing-4);
+}
+
+.experience-description {
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--spacing-6);
+}
+
+.experience-description ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-description li {
+  position: relative;
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-2);
+  color: hsl(var(--muted-foreground));
+}
+
+.experience-description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: hsl(var(--primary));
+  font-weight: bold;
+}
+
+/* Responsive adjustments for experience section */
+@media (max-width: 768px) {
+  .experience-content {
+    padding: 0 var(--spacing-2);
+  }
+  
+  .experience-item {
+    padding: var(--spacing-4);
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+  }
+  
+  .experience-company {
+    font-size: 1.25rem;
+  }
+  
+  .experience-position {
+    font-size: 1rem;
+  }
 }
 
 .experience-item {
@@ -795,6 +913,12 @@ p {
   list-style: none;
   padding: 0;
   margin-bottom: var(--spacing-6);
+}
+
+.experience-description ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .experience-description li {
