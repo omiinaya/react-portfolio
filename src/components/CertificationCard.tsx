@@ -63,11 +63,6 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
           <p className="certification-issuer">{certification.issuer}</p>
         </div>
 
-        {/* Date */}
-        <p className="certification-date">
-          {t('certifications.issued')}: {certification.date}
-        </p>
-
         {/* Skills Bubbles */}
         {certification.skills && certification.skills.length > 0 && (
           <div className="certification-skills">
@@ -84,19 +79,25 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
           <p className="certification-summary">{certification.summary}</p>
         )}
 
-        {/* Link Button */}
-        {certification.url.href && (
-          <div className="certification-actions">
+        {/* Action Buttons */}
+        <div className="certification-actions">
+          {/* Verification Button */}
+          {certification.url.href && (
             <a
               href={certification.url.href}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"
             >
-              {t('certifications.viewCertification')}
+              {t('certifications.verify')}
             </a>
-          </div>
-        )}
+          )}
+        </div>
+
+        {/* Date */}
+        <p className="certification-date">
+          {t('certifications.issued')}: {certification.date}
+        </p>
       </div>
     </div>
   );

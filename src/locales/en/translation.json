@@ -78,7 +78,8 @@
   "certifications": {
     "title": "Certifications",
     "issued": "Issued",
-    "viewCertification": "View Certification"
+    "viewCertification": "View Certification",
+    "verify": "Verify"
   },
   "contact": {
     "title": "Get In Touch",
