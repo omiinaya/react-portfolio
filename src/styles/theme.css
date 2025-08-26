@@ -531,7 +531,7 @@ p {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 35fr 65fr;
   gap: var(--spacing-12);
   align-items: center;
 }
@@ -572,42 +572,89 @@ p {
   flex-wrap: wrap;
 }
 
-.hero-image {
+.hero-stats {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  width: 100%;
+  min-height: 400px;
 }
 
-.image-placeholder {
-  width: 320px;
-  height: 320px;
-  border-radius: var(--radius-2xl);
-  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--muted)));
+.github-stats-container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  width: 100%;
+  max-width: 900px;
+  min-height: 380px;
+}
+
+.gitroll-badge {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  border: 2px solid hsl(var(--border));
-  box-shadow: var(--shadow-xl);
+  padding: var(--spacing-4);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  min-height: 120px;
+}
+
+.gitroll-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.gitroll-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  max-width: 100%;
+  min-height: 100px;
+}
+
+.github-stats-grid {
+  display: grid;
+  grid-template-columns: 60fr 40fr;
+  gap: var(--spacing-6);
+  width: 100%;
+}
+
+.github-stats-card,
+.github-languages-card {
+  padding: var(--spacing-4);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
-  position: relative;
+  min-height: 220px;
+  height: 220px; /* Fixed height for consistent card heights */
 }
 
-.image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent 0%, hsl(var(--primary) / 0.15) 50%, transparent 100%);
-  animation: shimmer 3s infinite;
-  transform: translateX(0%);
+.github-stats-card:hover,
+.github-languages-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+.github-stats-image,
+.github-languages-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain; /* Changed from cover to contain to prevent cropping */
+  object-position: center;
 }
 
 @media (max-width: 768px) {
@@ -629,10 +676,45 @@ p {
     justify-content: center;
   }
   
-  .image-placeholder {
-    width: 240px;
-    height: 240px;
-    border-radius: var(--radius-xl);
+  .hero-stats {
+    min-height: 300px;
+  }
+  
+  .github-stats-container {
+    max-width: 100%;
+    gap: var(--spacing-4);
+    min-height: 300px;
+  }
+  
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .gitroll-badge {
+    padding: var(--spacing-3);
+    min-height: 80px;
+  }
+  
+  .github-stats-card,
+  .github-languages-card {
+    padding: var(--spacing-3);
+    min-height: 160px;
+    height: 160px; /* Fixed height for consistent mobile card heights */
+  }
+  
+  .gitroll-image {
+    min-height: 60px;
+  }
+  
+  .github-stats-image,
+  .github-languages-image {
+    border-radius: var(--radius-sm);
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain; /* Changed from cover to contain to prevent cropping */
+    object-position: center;
   }
 }
 

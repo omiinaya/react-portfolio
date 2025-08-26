@@ -35,20 +35,35 @@ const Hero: React.FC = () => {
               </button>
             </div>
           </div>
-          <div className="hero-image">
-            <div className="image-placeholder">
-              <svg
-                width="200"
-                height="200"
-                viewBox="0 0 200 200"
-                fill="none"
-                stroke="var(--color-primary)"
-                strokeWidth="2"
-              >
-                <circle cx="100" cy="100" r="80" />
-                <circle cx="100" cy="80" r="30" />
-                <path d="M60 140 C70 120, 130 120, 140 140" />
-              </svg>
+          <div className="hero-stats">
+            <div className="github-stats-container">
+              {/* GitRoll Profile Badge - Full width at top */}
+              <div className="gitroll-badge">
+                <img
+                  src="https://gitroll.io/api/badges/profiles/v1/uupv0XPGvSwbc0uv4LzuUyBO7cmR2?theme=dark"
+                  alt="GitRoll Profile"
+                  className="gitroll-image"
+                />
+              </div>
+              
+              {/* GitHub Stats and Languages - Side by side */}
+              <div className="github-stats-grid">
+                <div className="github-stats-card">
+                  <img
+                    src="https://github-stats-flame.vercel.app/api?username=omiinaya&count_private=true&theme=dark&show_icons=true&include_all_commits=true&hide_border=true"
+                    alt="GitHub Stats"
+                    className="github-stats-image"
+                  />
+                </div>
+                
+                <div className="github-languages-card">
+                  <img
+                    src="https://github-stats-flame.vercel.app/api/top-langs/?username=omiinaya&langs_count=8&layout=compact&theme=dark&hide_border=true"
+                    alt="Most Used Languages"
+                    className="github-languages-image"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
