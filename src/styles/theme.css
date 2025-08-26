@@ -609,7 +609,7 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 130%; /* Allow overflow to the right */
+  width: 100%; /* Allow overflow to the right */
   min-height: 400px;
   margin-left: -5%; /* Center the overflow */
 }
@@ -617,14 +617,14 @@ p {
 .github-stats-container {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4);
   width: 100%;
   max-width: 900px;
   min-height: 380px;
 }
 
 .gitroll-badge {
-  width: 100%;
+  width: 110%;
   display: flex;
   justify-content: center;
   padding: var(--spacing-4);
@@ -634,6 +634,7 @@ p {
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
   min-height: 120px;
+  height: 400px;
 }
 
 .gitroll-badge:hover {
@@ -659,10 +660,10 @@ p {
 
 .gitroll-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: var(--radius);
   max-width: 100%;
-  min-height: 100px;
+  object-fit: cover;
   transition: opacity var(--transition-normal);
 }
 
@@ -672,12 +673,11 @@ p {
 
 .github-stats-grid {
   display: grid;
-  grid-template-columns: 60fr 40fr;
-  gap: var(--spacing-6);
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
   width: 100%;
 }
 
-.github-stats-card,
 .github-languages-card {
   padding: var(--spacing-4);
   background: hsl(var(--card));
@@ -758,7 +758,8 @@ p {
   
   .gitroll-badge {
     padding: var(--spacing-3);
-    min-height: 80px;
+    min-height: 100px;
+    height: 100px;
   }
   
   .github-stats-card,
@@ -769,7 +770,8 @@ p {
   }
   
   .gitroll-image {
-    min-height: 60px;
+    height: 100%;
+    object-fit: cover;
   }
   
   .github-stats-image,

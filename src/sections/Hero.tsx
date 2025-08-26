@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="hero-stats">
             <div className="github-stats-container">
-              {/* GitRoll Profile Badge - Full width at top */}
+              {/* GitRoll Profile Badge */}
               <div className="gitroll-badge">
                 <a
                   href="https://gitroll.io/profile/uupv0XPGvSwbc0uv4LzuUyBO7cmR2"
@@ -51,26 +51,6 @@ const Hero: React.FC = () => {
                     className="gitroll-image"
                   />
                 </a>
-              </div>
-              
-              {/* GitHub Stats and Languages - Side by side */}
-              
-              <div className="github-stats-grid">
-                <div className="github-stats-card">
-                  <img
-                    src="https://github-stats-flame.vercel.app/api?username=omiinaya&count_private=true&theme=dark&show_icons=true&include_all_commits=true&hide_border=true&bg_color=18181B"
-                    alt="GitHub Stats"
-                    className="github-stats-image"
-                  />
-                </div>
-                
-                <div className="github-languages-card">
-                  <img
-                    src="https://github-stats-flame.vercel.app/api/top-langs/?username=omiinaya&langs_count=8&layout=compact&theme=dark&hide_border=true&bg_color=18181B"
-                    alt="Most Used Languages"
-                    className="github-languages-image"
-                  />
-                </div>
               </div>
             </div>
           </div>
