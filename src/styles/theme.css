@@ -662,6 +662,18 @@ p {
   object-position: center;
 }
 
+/* GitHub Stats images - API-based background color matching (no filters needed) */
+.github-stats-image,
+.github-languages-image {
+  transition: transform var(--transition-normal);
+}
+
+/* Hover effects for GitHub stats images */
+.github-stats-card:hover .github-stats-image,
+.github-languages-card:hover .github-languages-image {
+  transform: scale(1.02);
+}
+
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;

@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
               <div className="github-stats-grid">
                 <div className="github-stats-card">
                   <img
-                    src="https://github-stats-flame.vercel.app/api?username=omiinaya&count_private=true&theme=dark&show_icons=true&include_all_commits=true&hide_border=true"
+                    src="https://github-stats-flame.vercel.app/api?username=omiinaya&count_private=true&theme=dark&show_icons=true&include_all_commits=true&hide_border=true&bg_color=18181B"
                     alt="GitHub Stats"
                     className="github-stats-image"
                   />
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
                 
                 <div className="github-languages-card">
                   <img
-                    src="https://github-stats-flame.vercel.app/api/top-langs/?username=omiinaya&langs_count=8&layout=compact&theme=dark&hide_border=true"
+                    src="https://github-stats-flame.vercel.app/api/top-langs/?username=omiinaya&langs_count=8&layout=compact&theme=dark&hide_border=true&bg_color=18181B"
                     alt="Most Used Languages"
                     className="github-languages-image"
                   />
