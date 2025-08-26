@@ -8,7 +8,7 @@ interface CertificationCardProps {
     issuer: string;
     date: string;
     summary: string;
-    url: {
+    url?: {
       label: string;
       href: string;
     };
@@ -81,17 +81,19 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
 
         {/* Action Buttons */}
         <div className="certification-actions">
-          {/* Verification Button */}
-          {certification.url.href && (
-            <a
-              href={certification.url.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              {t('certifications.verify')}
-            </a>
-          )}
+          {/* Verification Button - Always shown but conditionally disabled */}
+          <button
+            className={`btn btn-primary ${!certification.url?.href ? 'btn-disabled' : ''}`}
+            onClick={() => {
+              if (certification.url?.href) {
+                window.open(certification.url.href, '_blank', 'noopener,noreferrer');
+              }
+            }}
+            disabled={!certification.url?.href}
+            title={!certification.url?.href ? t('certifications.noVerificationLink') : t('certifications.verify')}
+          >
+            {t('certifications.verify')}
+          </button>
         </div>
 
         {/* Date */}

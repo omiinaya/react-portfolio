@@ -216,6 +216,21 @@ p {
   border-color: hsl(var(--primary) / 0.9);
 }
 
+/* Disabled button styles */
+.btn-disabled,
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.btn-disabled:hover,
+.btn:disabled:hover {
+  transform: none;
+  background-color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
 /* Header styles */
 .header {
   position: fixed;
@@ -1123,6 +1138,68 @@ p {
     text-align: center;
   }
 }
+
+/* Certifications toggle button styles */
+.certifications-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-8);
+  animation: fadeInUp var(--transition-normal);
+}
+
+.certifications-toggle-btn {
+  min-width: 200px;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.certifications-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Smooth animations for certifications grid */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  transition: all var(--transition-normal);
+}
+
+.certification-card {
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              opacity var(--transition-normal);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for showing/hiding certifications */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For smooth transitions when toggling */
+.certifications-grid > * {
+  animation: fadeInUp var(--transition-normal) forwards;
+}
+
+.certifications-grid > *:nth-child(1) { animation-delay: 0ms; }
+.certifications-grid > *:nth-child(2) { animation-delay: 50ms; }
+.certifications-grid > *:nth-child(3) { animation-delay: 100ms; }
+.certifications-grid > *:nth-child(4) { animation-delay: 150ms; }
+.certifications-grid > *:nth-child(5) { animation-delay: 200ms; }
+.certifications-grid > *:nth-child(6) { animation-delay: 250ms; }
+.certifications-grid > *:nth-child(7) { animation-delay: 300ms; }
+.certifications-grid > *:nth-child(8) { animation-delay: 350ms; }
+.certifications-grid > *:nth-child(9) { animation-delay: 400ms; }
 
 /* Contact section styles */
 .contact-content {

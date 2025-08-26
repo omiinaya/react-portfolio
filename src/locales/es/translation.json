@@ -79,7 +79,10 @@
     "title": "Certificaciones",
     "issued": "Emitido",
     "viewCertification": "Ver Certificación",
-    "verify": "Verificar"
+    "verify": "Verificar",
+    "noVerificationLink": "No hay enlace de verificación disponible",
+    "showAll": "Mostrar todas las {{count}} certificaciones",
+    "showLess": "Mostrar menos"
   },
   "contact": {
     "title": "Ponte en Contacto",
