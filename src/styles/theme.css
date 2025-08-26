@@ -637,8 +637,7 @@ p {
 }
 
 .gitroll-badge:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  /* Hover animations removed - static styling maintained */
 }
 
 .gitroll-link {
@@ -649,7 +648,7 @@ p {
 }
 
 .gitroll-link:hover {
-  transform: scale(1.02);
+  /* Hover animations removed - static styling maintained */
 }
 
 .gitroll-link:focus-visible {
@@ -668,7 +667,7 @@ p {
 }
 
 .gitroll-link:hover .gitroll-image {
-  opacity: 0.9;
+  /* Hover animations removed - static styling maintained */
 }
 
 .github-stats-grid {
@@ -696,8 +695,7 @@ p {
 
 .github-stats-card:hover,
 .github-languages-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  /* Hover animations removed - static styling maintained */
 }
 
 .github-stats-image,
@@ -721,7 +719,7 @@ p {
 /* Hover effects for GitHub stats images */
 .github-stats-card:hover .github-stats-image,
 .github-languages-card:hover .github-languages-image {
-  transform: scale(1.02);
+  /* Hover animations removed - static styling maintained */
 }
 
 @media (max-width: 768px) {

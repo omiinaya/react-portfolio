@@ -54,6 +54,7 @@ const Hero: React.FC = () => {
               </div>
               
               {/* GitHub Stats and Languages - Side by side */}
+              
               <div className="github-stats-grid">
                 <div className="github-stats-card">
                   <img
