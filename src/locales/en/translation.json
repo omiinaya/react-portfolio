@@ -87,7 +87,8 @@
     "showLess": "Show less"
   },
   "contact": {
-    "title": "Get In Touch",
+    "title": "Contact Me",
+    "header": "Get In Touch",
     "description": "I'm always interested in new opportunities and collaborations. Feel free to reach out if you'd like to work together!",
     "name": "Name",
     "email": "Email",

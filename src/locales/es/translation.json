@@ -87,7 +87,8 @@
     "showLess": "Mostrar menos"
   },
   "contact": {
-    "title": "Ponte en Contacto",
+    "title": "Contactame",
+    "header": "Ponte en Contacto",
     "description": "Siempre estoy interesado en nuevas oportunidades y colaboraciones. ¡No dudes en contactarme si te gustaría trabajar juntos!",
     "name": "Nombre",
     "email": "Correo Electrónico",

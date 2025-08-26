@@ -39,11 +39,18 @@ const Hero: React.FC = () => {
             <div className="github-stats-container">
               {/* GitRoll Profile Badge - Full width at top */}
               <div className="gitroll-badge">
-                <img
-                  src="https://gitroll.io/api/badges/profiles/v1/uupv0XPGvSwbc0uv4LzuUyBO7cmR2?theme=dark"
-                  alt="GitRoll Profile"
-                  className="gitroll-image"
-                />
+                <a
+                  href="https://gitroll.io/profile/uupv0XPGvSwbc0uv4LzuUyBO7cmR2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="gitroll-link"
+                >
+                  <img
+                    src="https://gitroll.io/api/badges/profiles/v1/uupv0XPGvSwbc0uv4LzuUyBO7cmR2?theme=dark"
+                    alt="GitRoll Profile"
+                    className="gitroll-image"
+                  />
+                </a>
               </div>
               
               {/* GitHub Stats and Languages - Side by side */}

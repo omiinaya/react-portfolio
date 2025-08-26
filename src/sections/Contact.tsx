@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
         <h2 className="section-title">{t('contact.title')}</h2>
         <div className="contact-content">
           <div className="contact-info">
-            <h3>{t('contact.title')}</h3>
+            <h3>{t('contact.header')}</h3>
             <p>
               {t('contact.description')}
             </p>
@@ -88,6 +88,7 @@ const Contact: React.FC = () => {
         </div>
         
         {/* "Or" divider and Social Media Links - Now positioned below both contact columns */}
+        {/*
         <div className="contact-social-section">
           <div className="contact-divider">
             <span className="divider-text">{t('contact.or') || 'Or'}</span>
@@ -130,6 +131,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
         </div>
+        */}
       </div>
     </section>
   );
