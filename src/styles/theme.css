@@ -1158,6 +1158,25 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+/* Projects toggle button styles */
+.projects-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-8);
+  animation: fadeInUp var(--transition-normal);
+}
+
+.projects-toggle-btn {
+  min-width: 200px;
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.projects-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 /* Smooth animations for certifications grid */
 .certifications-grid {
   display: grid;
@@ -1173,7 +1192,22 @@ p {
   transform: translateY(0);
 }
 
-/* Animation for showing/hiding certifications */
+/* Smooth animations for projects grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.project-card {
+  transition: transform var(--transition-normal),
+              box-shadow var(--transition-normal),
+              opacity var(--transition-normal);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for showing/hiding certifications and projects */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -1192,6 +1226,13 @@ p {
   animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
+/* Staggered animation for projects - start hidden and animate in */
+.projects-grid > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
 /* Faster staggered delays for more immediate feel */
 .certifications-grid > *:nth-child(1) { animation-delay: 0ms; }
 .certifications-grid > *:nth-child(2) { animation-delay: 80ms; }
@@ -1202,6 +1243,17 @@ p {
 .certifications-grid > *:nth-child(7) { animation-delay: 480ms; }
 .certifications-grid > *:nth-child(8) { animation-delay: 560ms; }
 .certifications-grid > *:nth-child(9) { animation-delay: 640ms; }
+
+/* Faster staggered delays for projects */
+.projects-grid > *:nth-child(1) { animation-delay: 0ms; }
+.projects-grid > *:nth-child(2) { animation-delay: 80ms; }
+.projects-grid > *:nth-child(3) { animation-delay: 160ms; }
+.projects-grid > *:nth-child(4) { animation-delay: 240ms; }
+.projects-grid > *:nth-child(5) { animation-delay: 320ms; }
+.projects-grid > *:nth-child(6) { animation-delay: 400ms; }
+.projects-grid > *:nth-child(7) { animation-delay: 480ms; }
+.projects-grid > *:nth-child(8) { animation-delay: 560ms; }
+.projects-grid > *:nth-child(9) { animation-delay: 640ms; }
 
 /* Contact section styles */
 .contact-content {

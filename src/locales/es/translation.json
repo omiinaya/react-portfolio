@@ -73,7 +73,9 @@
         "title": "Sitio Web de Portafolio",
         "description": "Un sitio web de portafolio moderno con soporte para modo oscuro y diseño responsivo."
       }
-    }
+    },
+    "showAll": "Mostrar todos los {{count}} proyectos",
+    "showLess": "Mostrar menos"
   },
   "certifications": {
     "title": "Certificaciones",

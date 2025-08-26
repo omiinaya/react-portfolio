@@ -73,7 +73,9 @@
         "title": "Portfolio Website",
         "description": "A modern portfolio website with dark mode support and responsive design."
       }
-    }
+    },
+    "showAll": "Show all {{count}} projects",
+    "showLess": "Show less"
   },
   "certifications": {
     "title": "Certifications",

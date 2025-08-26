@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
+  const [showAll, setShowAll] = useState(false);
+  
   const projects: Project[] = [
     {
       id: '1',
@@ -40,12 +42,19 @@ const Projects: React.FC = () => {
     }
   ];
 
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+  const hasMoreProjects = projects.length > 3;
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
   return (
     <section id="projects" className="projects section">
       <div className="container">
         <h2 className="section-title">{t('projects.title')}</h2>
         <div className="projects-grid">
-          {projects.map((project) => (
+          {visibleProjects.map((project) => (
             <div key={project.id} className="project-card card">
               <div className="project-image">
                 <div className="image-placeholder">
@@ -99,6 +108,18 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
+        {hasMoreProjects && (
+          <div className="projects-toggle">
+            <button
+              className="btn btn-primary projects-toggle-btn"
+              onClick={toggleShowAll}
+            >
+              {showAll
+                ? t('projects.showLess')
+                : t('projects.showAll', { count: projects.length })}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
