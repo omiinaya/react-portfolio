@@ -84,50 +84,51 @@ const Contact: React.FC = () => {
             <button type="submit" className="btn btn-primary">
               {t('contact.send')}
             </button>
-            
-            {/* "Or" divider */}
-            <div className="contact-divider">
-              <span className="divider-text">{t('contact.or') || 'Or'}</span>
-            </div>
-            
-            {/* Social Media Links */}
-            <div className="social-media-section">
-              <p className="social-media-text">
-                {t('contact.connectSocial') || 'Connect with me on social media:'}
-              </p>
-              <div className="social-media-links">
-                {profile.sections.profiles.items.map((profileItem) => {
-                  let IconComponent;
-                  switch (profileItem.network.toLowerCase()) {
-                    case 'github':
-                      IconComponent = GitHubIcon;
-                      break;
-                    case 'x':
-                      IconComponent = TwitterIcon;
-                      break;
-                    case 'linkedin':
-                      IconComponent = LinkedInIcon;
-                      break;
-                    default:
-                      return null;
-                  }
-                  
-                  return (
-                    <a
-                      key={profileItem.id}
-                      href={profileItem.url.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-media-link"
-                      aria-label={`Visit my ${profileItem.network} profile`}
-                    >
-                      <IconComponent />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
           </form>
+        </div>
+        
+        {/* "Or" divider and Social Media Links - Now positioned below both contact columns */}
+        <div className="contact-social-section">
+          <div className="contact-divider">
+            <span className="divider-text">{t('contact.or') || 'Or'}</span>
+          </div>
+          
+          <div className="social-media-section">
+            <p className="social-media-text">
+              {t('contact.connectSocial') || 'Connect with me on social media:'}
+            </p>
+            <div className="social-media-links">
+              {profile.sections.profiles.items.map((profileItem) => {
+                let IconComponent;
+                switch (profileItem.network.toLowerCase()) {
+                  case 'github':
+                    IconComponent = GitHubIcon;
+                    break;
+                  case 'x':
+                    IconComponent = TwitterIcon;
+                    break;
+                  case 'linkedin':
+                    IconComponent = LinkedInIcon;
+                    break;
+                  default:
+                    return null;
+                }
+                
+                return (
+                  <a
+                    key={profileItem.id}
+                    href={profileItem.url.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-media-link"
+                    aria-label={`Visit my ${profileItem.network} profile`}
+                  >
+                    <IconComponent />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>

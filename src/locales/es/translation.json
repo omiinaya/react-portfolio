@@ -96,7 +96,9 @@
     "locationValue": "Nueva York, NY",
     "send": "Enviar Mensaje",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "or": "O",
+    "connectSocial": "Contáctame en una de mis redes sociales:"
   },
   "footer": {
     "copyright": "© 2024 Portafolio. Todos los derechos reservados.",

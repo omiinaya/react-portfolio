@@ -1374,6 +1374,17 @@ p {
   font-weight: 500;
 }
 
+/* Contact Social Section - Positioned below both contact columns */
+.contact-social-section {
+  grid-column: 1 / -1;
+  text-align: center;
+  /*
+  margin-top: var(--spacing-12);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid hsl(var(--border));
+  */
+}
+
 /* Social Media Section Styles */
 .social-media-section {
   text-align: center;
@@ -1419,8 +1430,18 @@ p {
   border-radius: var(--radius);
 }
 
-/* Mobile Responsive Styles for Social Media */
+/* Mobile Responsive Styles for Contact Section */
 @media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+  }
+  
+  .contact-social-section {
+    margin-top: var(--spacing-8);
+    padding-top: var(--spacing-6);
+  }
+  
   .social-media-links {
     gap: var(--spacing-3);
   }
