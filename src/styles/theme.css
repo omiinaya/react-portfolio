@@ -927,17 +927,18 @@ p {
 /* Certifications section styles */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-8);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
 }
 
 .certification-card {
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-  padding: var(--spacing-6);
   border-radius: var(--radius-lg);
   border: 1px solid hsl(var(--border));
   background-color: hsl(var(--card));
-  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .certification-card:hover {
@@ -945,40 +946,172 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+.certification-image {
+  height: 140px;
+  width: 140px; /* Make width equal to height for perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin: -1px -1px 0 -1px; /* Extend to cover card borders */
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--muted)));
+  border-radius: 50%; /* Make container a perfect circle */
+  margin: 0 auto; /* Center the circle */
+}
+
+.certification-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--muted)));
+  z-index: 1;
+  border-radius: 50%; /* Make gradient overlay a perfect circle */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.certification-badge {
+  max-width: 90px;
+  max-height: 90px;
+  object-fit: contain;
+  border-radius: 50%; /* Make badge image a perfect circle */
+  background: hsl(var(--card));
+  padding: var(--spacing-2);
+  box-shadow: var(--shadow-sm);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  border-radius: 50%; /* Make placeholder a perfect circle */
+}
+
+.image-placeholder.hidden {
+  display: none;
+}
+
+.certification-content {
+  padding: var(--spacing-4);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.certification-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2);
+}
+
 .certification-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: hsl(var(--foreground));
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-1);
 }
 
 .certification-issuer {
   color: hsl(var(--primary));
   font-weight: 500;
+  font-size: 0.875rem;
   margin-bottom: var(--spacing-1);
 }
 
 .certification-date {
   color: hsl(var(--muted-foreground));
-  font-size: 0.875rem;
-  margin-bottom: var(--spacing-4);
+  font-size: 0.8125rem;
+  text-align: center;
 }
 
-.certification-link {
-  color: hsl(var(--primary));
-  text-decoration: none;
+.certification-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+  justify-content: center;
+  margin: var(--spacing-2) 0;
+}
+
+.skill-bubble {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: 9999px;
+  font-size: 0.6875rem;
   font-weight: 500;
-  transition: color var(--transition-fast);
+  border: 1px solid hsl(var(--border));
+  transition: all var(--transition-fast);
 }
 
-.certification-link:hover {
-  color: hsl(var(--primary) / 0.8);
-  text-decoration: underline;
+.skill-bubble:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  transform: translateY(-1px);
+}
+
+.certification-summary {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  text-align: center;
+  margin: var(--spacing-1) 0;
+}
+
+.certification-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: var(--spacing-3);
+}
+
+.certification-actions .btn {
+  min-width: 120px;
+  font-size: 0.8125rem;
+  padding: var(--spacing-1) var(--spacing-3);
 }
 
 @media (max-width: 768px) {
   .certifications-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-4);
+  }
+  
+  .certification-image {
+    height: 120px;
+    width: 120px; /* Maintain square aspect ratio for perfect circle */
+  }
+  
+  .certification-badge {
+    max-width: 80px;
+    max-height: 80px;
+  }
+  
+  .certification-content {
+    padding: var(--spacing-3);
+  }
+  
+  .certification-title {
+    font-size: 1rem;
+  }
+  
+  .certification-issuer {
+    font-size: 0.8125rem;
   }
 }
 

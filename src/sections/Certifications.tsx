@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
+import CertificationCard from '../components/CertificationCard';
 
 const Certifications: React.FC = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { profile } = useData();
 
   return (
@@ -11,27 +12,9 @@ const Certifications: React.FC = () => {
       <div className="container">
         <h2 className="section-title">{t('certifications.title')}</h2>
         <div className="certifications-grid">
-         {profile.sections.certifications.items.map((cert) => (
-           <div key={cert.id} className="certification-card card">
-             <div className="certification-content">
-               <h3 className="certification-title">{cert.name}</h3>
-               <p className="certification-issuer">{cert.issuer}</p>
-               <p className="certification-date">
-                 {t('certifications.issued')}: {cert.date}
-               </p>
-               {cert.url.href && (
-                 <a
-                   href={cert.url.href}
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="certification-link"
-                 >
-                   {t('certifications.viewCertification')}
-                 </a>
-               )}
-             </div>
-           </div>
-         ))}
+          {profile.sections.certifications.items.map((cert) => (
+            <CertificationCard key={cert.id} certification={cert} />
+          ))}
         </div>
       </div>
     </section>

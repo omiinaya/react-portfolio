@@ -55,7 +55,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["React", "Node.js", "JavaScript", "HTML", "CSS", "Databases"],
+          "image": "/images/certifications/full-stack-developer.png"
         },
         {
           "id": "bft89rhc79g1u35pgxen3duv",
@@ -63,11 +65,13 @@
           "name": "A+",
           "issuer": "Comptia",
           "date": "Apr 2024",
-          "summary": "",
+          "summary": "CompTIA A+ certifies IT support skills, including device setup, troubleshooting, data recovery, and malware response, with demonstrated security and privacy competency.",
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Computer Hardware", "Troubleshooting", "Virtualization", "Operating Systems", "Networking"],
+          "image": "/images/certifications/a-plus.png"
         },
         {
           "id": "kbz1l0971ygjz5i95jexoi50",
@@ -75,11 +79,13 @@
           "name": "Tech+",
           "issuer": "Comptia",
           "date": "Apr 2025",
-          "summary": "",
+          "summary": "Tech+ certifies foundational IT skills in computing, software, databases, and security, with abilities to install software, configure networks, and address risks.",
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Cloud Computing", "Security", "IT Infrastructure", "Troubleshooting"],
+          "image": "/images/certifications/tech-plus.png"
         },
         {
           "id": "wjd2ohdezr7x7g8jh95r65f7",
@@ -91,7 +97,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["IT Fundamentals", "Computer Basics", "Digital Literacy"],
+          "image": "/images/certifications/itf-plus.png"
         },
         {
           "id": "eayy3c8m1rnibhrwfbtjx4c7",
@@ -103,7 +111,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Algorithms", "Data Structures", "Programming Basics"],
+          "image": "/images/certifications/software-development-fundamentals.png"
         },
         {
           "id": "b1uceyrqzpwwxo5vcb0fw27y",
@@ -115,7 +125,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Python", "Programming"],
+          "image": "/images/certifications/mta-introduction-to-python.png"
         },
         {
           "id": "tna9qaospw88we33tziy78hu",
@@ -127,7 +139,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["JavaScript", "Web Development"],
+          "image": "/images/certifications/mta-introduction-to-javascript.png"
         },
         {
           "id": "v0e8k2xypx3a47ncorm6ev4x",
@@ -139,7 +153,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Home Automation", "IoT", "Programming", "Control4"],
+          "image": "/images/certifications/automation-programmer.png"
         },
         {
           "id": "tlaxs6aqemgk9nf8dv1chm9v",
@@ -151,7 +167,9 @@
           "url": {
             "label": "",
             "href": ""
-          }
+          },
+          "skills": ["Installation", "Configuration", "Troubleshooting", "Control4"],
+          "image": "/images/certifications/associate-installer.png"
         }
       ]
     },
