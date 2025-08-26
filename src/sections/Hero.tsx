@@ -2,10 +2,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { smoothScrollTo } from '../utils/smoothScroll';
 import { useData } from '../contexts/DataContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
   const { profile } = useData();
+  const { isDarkMode } = useTheme();
+  
+  const gitrollUrl = `https://gitroll.io/api/badges/profiles/v1/uupv0XPGvSwbc0uv4LzuUyBO7cmR2?theme=${isDarkMode ? 'dark' : 'light'}`;
   const handleScrollTo = (targetId: string) => {
     smoothScrollTo(targetId, {
       duration: 1000,
@@ -46,7 +50,7 @@ const Hero: React.FC = () => {
                   className="gitroll-link"
                 >
                   <img
-                    src="https://gitroll.io/api/badges/profiles/v1/uupv0XPGvSwbc0uv4LzuUyBO7cmR2?theme=dark"
+                    src={gitrollUrl}
                     alt="GitRoll Profile"
                     className="gitroll-image"
                   />
