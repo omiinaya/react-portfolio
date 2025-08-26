@@ -60,7 +60,7 @@ const Header: React.FC = () => {
           <div className="nav-actions">
             {/* GitHub Repository Link */}
             <a
-              href="https://github.com/omiinaya/new-react-portfolio"
+              href="https://github.com/omiinaya/react-portfolio"
               target="_blank"
               rel="noopener noreferrer"
               className="github-link"
