@@ -531,7 +531,7 @@ p {
 
 .hero-content {
   display: grid;
-  grid-template-columns: 35fr 65fr;
+  grid-template-columns: 1fr 1fr; /* 50/50 split */
   gap: var(--spacing-12);
   align-items: center;
 }
@@ -577,8 +577,9 @@ p {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
+  width: 130%; /* Allow overflow to the right */
   min-height: 400px;
+  margin-left: -5%; /* Center the overflow */
 }
 
 .github-stats-container {
