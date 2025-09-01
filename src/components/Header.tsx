@@ -2,12 +2,14 @@ import React, { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { smoothScrollTo, scrollToTop } from '../utils/smoothScroll';
+import HamburgerMenu from './HamburgerMenu';
 import '../styles/theme.css';
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { isDarkMode, toggleTheme } = useTheme();
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleNavClick = useCallback((targetId: string) => {
     smoothScrollTo(targetId, {
@@ -31,6 +33,14 @@ const Header: React.FC = () => {
 
   const toggleLanguageDropdown = () => {
     setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -58,6 +68,17 @@ const Header: React.FC = () => {
         </div>
           
           <div className="nav-actions">
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={toggleMobileMenu}
+              className="hamburger-toggle"
+              aria-label={t('header.mobileMenu')}
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
             {/* GitHub Repository Link */}
             <a
               href="https://github.com/omiinaya/react-portfolio"
@@ -161,6 +182,12 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </div>
+      
+      {/* Mobile Navigation Menu */}
+      <HamburgerMenu
+        isOpen={isMobileMenuOpen}
+        onClose={closeMobileMenu}
+      />
     </header>
   );
 };

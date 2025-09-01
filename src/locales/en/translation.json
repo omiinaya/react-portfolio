@@ -7,7 +7,8 @@
     "certifications": "Certifications",
     "contact": "Contact",
     "language": "Language",
-    "github": "View GitHub Repository"
+    "github": "View GitHub Repository",
+    "mobileMenu": "Mobile navigation menu"
   },
   "hero": {
     "greeting": "Hello, I'm",
