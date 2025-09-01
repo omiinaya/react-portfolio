@@ -160,18 +160,7 @@ This document outlines the planned enhancements for the React portfolio applicat
 
 ## 🎨 P3 - Cosmetic & Optional
 
-### 11. Advanced Theme System
-**Status**: Not Started
-**Estimated Effort**: 5 hours
-**Dependencies**: None
-
-**Tasks:**
-- [ ] Multiple color scheme support
-- [ ] Theme persistence improvements
-- [ ] System preference detection
-- [ ] Theme transition animations
-
-### 12. Custom Scrollbar Styling
+### 11. Custom Scrollbar Styling
 **Status**: Not Started
 **Estimated Effort**: 2 hours
 **Dependencies**: None
@@ -181,7 +170,7 @@ This document outlines the planned enhancements for the React portfolio applicat
 - [ ] Cross-browser compatibility
 - [ ] Reduced motion support
 
-### 13. Content Management
+### 12. Content Management
 **Status**: Not Started
 **Estimated Effort**: 8 hours
 **Dependencies**: CMS setup
