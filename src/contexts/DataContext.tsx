@@ -75,6 +75,20 @@ export interface ProfileData {
         level: number;
       }>;
     };
+    projects: {
+      items: Array<{
+        id: string;
+        visible: boolean;
+        name: string;
+        description: string;
+        technologies: string[];
+        url: {
+          label: string;
+          href: string;
+        };
+        image?: string;
+      }>;
+    };
     // Add other sections as needed
     [key: string]: any;
   };

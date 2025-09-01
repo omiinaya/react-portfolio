@@ -1,46 +1,22 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
+import { useData } from '../contexts/DataContext';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
+  const { profile } = useData();
   const [showAll, setShowAll] = useState(false);
   
-  const projects: Project[] = [
-    {
-      id: '1',
-      title: t('projects.items.ecommerce.title'),
-      description: t('projects.items.ecommerce.description'),
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com',
-      image: '/api/placeholder/400/250'
-    },
-    {
-      id: '2',
-      title: t('projects.items.taskManagement.title'),
-      description: t('projects.items.taskManagement.description'),
-      technologies: ['React', 'TypeScript', 'Socket.io', 'PostgreSQL'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com'
-    },
-    {
-      id: '3',
-      title: t('projects.items.weather.title'),
-      description: t('projects.items.weather.description'),
-      technologies: ['React', 'Chart.js', 'OpenWeather API', 'CSS3'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com'
-    },
-    {
-      id: '4',
-      title: t('projects.items.portfolio.title'),
-      description: t('projects.items.portfolio.description'),
-      technologies: ['React', 'TypeScript', 'CSS3', 'Vite'],
-      githubUrl: 'https://github.com',
-      liveUrl: 'https://example.com'
-    }
-  ];
+  const projects: Project[] = profile.sections.projects.items.map(item => ({
+    id: item.id,
+    title: item.name,
+    description: item.description,
+    technologies: item.technologies,
+    githubUrl: item.url.href,
+    liveUrl: item.url.href,
+    image: item.image
+  }));
 
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
   const hasMoreProjects = projects.length > 3;
