@@ -1,12 +1,10 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
 import { motion } from 'framer-motion';
 import { slideInFromTop, withReducedMotion } from '../utils/animations';
 import { trackSocialMediaClick, isDevelopmentMode } from '../utils/analytics';
 
 const ExecutiveContactPanel: React.FC = () => {
-  const { t } = useTranslation();
   const { profile } = useData();
 
   // Miami area coordinates for approximate location
@@ -27,16 +25,8 @@ const ExecutiveContactPanel: React.FC = () => {
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
     >
-      {/* Header Section */}
-      <div className="contact-panel-header">
-        <h3 className="contact-panel-title">{t('contact.getInTouch', 'Get in Touch')}</h3>
-        <p className="contact-panel-subtitle">
-          {t('contact.availableForOpportunities', 'Available for new opportunities and collaborations')}
-        </p>
-      </div>
-
-      {/* Main Content Grid - 2 Column Layout */}
-      <div className="contact-panel-content">
+      {/* Main Content Grid - 3 Column Layout (Map | Divider | Social Links) */}
+      <div className="contact-panel-content" style={{ gridTemplateColumns: '2fr auto 1fr' }}>
         {/* Left Column - Contact Info + Map */}
         <div className="left-column">
 
@@ -56,11 +46,13 @@ const ExecutiveContactPanel: React.FC = () => {
                   loading="lazy"
                 />
               </div>
-              <div className="map-disclaimer">
-                <small>Approximate location in {profile.basics.location}</small>
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* Vertical Divider with "or" text */}
+        <div className="vertical-divider">
+          <div className="vertical-divider-text">or</div>
         </div>
 
         {/* Right Column - Vertical Social Links */}
@@ -121,12 +113,6 @@ const getSocialIcon = (network: string) => {
 const EmailIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
-  </svg>
-);
-
-const LocationIcon = () => (
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
   </svg>
 );
 
