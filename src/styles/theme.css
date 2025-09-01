@@ -1738,6 +1738,83 @@ p {
   min-height: 120px;
 }
 
+/* Form validation styles */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: hsl(var(--destructive));
+  box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.1);
+}
+
+.form-group input.error:focus-visible,
+.form-group textarea.error:focus-visible {
+  border-color: hsl(var(--destructive));
+  box-shadow: 0 0 0 3px hsl(var(--destructive) / 0.2);
+}
+
+.error-message {
+  color: hsl(var(--destructive));
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: var(--spacing-1);
+  display: block;
+}
+
+/* Loading spinner styles */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: var(--spacing-2);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button loading state */
+.btn.loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Form status message styles */
+.form-status {
+  padding: var(--spacing-4);
+  border-radius: var(--radius);
+  margin-bottom: var(--spacing-4);
+  border: 1px solid;
+}
+
+.form-status.success {
+  background-color: hsl(var(--success) / 0.1);
+  border-color: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+}
+
+.form-status.error {
+  background-color: hsl(var(--destructive) / 0.1);
+  border-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+/* Success colors for form status */
+:root {
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 98%;
+}
+
+.dark {
+  --success: 142 70% 45%;
+  --success-foreground: 0 0% 98%;
+}
+
 @media (max-width: 768px) {
   .contact-content {
     grid-template-columns: 1fr;

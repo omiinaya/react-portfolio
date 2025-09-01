@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
+import { trackSocialMediaClick, isDevelopmentMode } from '../utils/analytics';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
@@ -39,6 +40,11 @@ const Footer: React.FC = () => {
                  rel="noopener noreferrer"
                  className="footer-link"
                  aria-label={`Visit my ${profileItem.network} profile`}
+                 onClick={() => {
+                   if (!isDevelopmentMode()) {
+                     trackSocialMediaClick(profileItem.network, profileItem.url.href);
+                   }
+                 }}
                >
                  <IconComponent />
                </a>
@@ -48,6 +54,11 @@ const Footer: React.FC = () => {
              href={`mailto:${profile.basics.email}`}
              className="footer-link"
              aria-label="Send me an email"
+             onClick={() => {
+               if (!isDevelopmentMode()) {
+                 trackSocialMediaClick('Email', `mailto:${profile.basics.email}`);
+               }
+             }}
            >
              <MailIcon />
            </a>

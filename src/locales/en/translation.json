@@ -98,10 +98,22 @@
     "location": "Location",
     "locationValue": "New York, NY",
     "send": "Send Message",
+    "sending": "Sending...",
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again.",
     "or": "Or",
-    "connectSocial": "Reach me at one of my socials:"
+    "connectSocial": "Reach me at one of my socials:",
+    "validation": {
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 2 characters",
+      "nameMaxLength": "Name must be less than 50 characters",
+      "emailRequired": "Email is required",
+      "emailValid": "Please enter a valid email address",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters",
+      "messageMaxLength": "Message must be less than 1000 characters",
+      "spamDetected": "Spam detected"
+    }
   },
   "footer": {
     "copyright": "© 2024 Portfolio. All rights reserved.",

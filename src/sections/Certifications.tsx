@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
 import CertificationCard from '../components/CertificationCard';
@@ -7,6 +7,7 @@ import AnimatedButton from '../components/AnimatedButton';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
+import { trackCertificationView, isDevelopmentMode } from '../utils/analytics';
 
 const Certifications: React.FC = () => {
   const { t } = useTranslation();
@@ -16,6 +17,15 @@ const Certifications: React.FC = () => {
   const certifications = profile.sections.certifications.items;
   const visibleCertifications = showAll ? certifications : certifications.slice(0, 4);
   const hasMoreCertifications = certifications.length > 4;
+
+  // Track certification views when they become visible
+  useEffect(() => {
+    if (!isDevelopmentMode()) {
+      visibleCertifications.forEach(cert => {
+        trackCertificationView(cert.id, cert.name);
+      });
+    }
+  }, [visibleCertifications]);
 
   const toggleShowAll = () => {
     setShowAll(!showAll);

@@ -146,6 +146,18 @@ export const slideInFromRight: Variants = {
   },
 };
 
+export const slideInFromTop: Variants = {
+  hidden: { opacity: 0, y: -30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
+
 // Utility function to check for reduced motion preference
 export const shouldReduceMotion = (): boolean => {
   if (typeof window === 'undefined') return false;

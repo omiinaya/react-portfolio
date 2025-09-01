@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { ThemeContextType } from '../types';
+import { trackThemeToggle, isDevelopmentMode } from '../utils/analytics';
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
@@ -29,7 +30,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   }, [isDarkMode]);
 
   const toggleTheme = () => {
-    setIsDarkMode(prev => !prev);
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    
+    // Track theme toggle
+    if (!isDevelopmentMode()) {
+      trackThemeToggle(newTheme ? 'dark' : 'light');
+    }
   };
 
   return (

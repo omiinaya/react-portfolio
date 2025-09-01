@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '../contexts/ThemeContext';
 import { smoothScrollTo, scrollToTop } from '../utils/smoothScroll';
 import HamburgerMenu from './HamburgerMenu';
+import { trackLanguageChange, isDevelopmentMode } from '../utils/analytics';
 import '../styles/theme.css';
 
 const Header: React.FC = () => {
@@ -29,6 +30,11 @@ const Header: React.FC = () => {
   const handleLanguageChange = (language: string) => {
     i18n.changeLanguage(language);
     setIsLanguageDropdownOpen(false);
+    
+    // Track language change
+    if (!isDevelopmentMode()) {
+      trackLanguageChange(language);
+    }
   };
 
   const toggleLanguageDropdown = () => {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
 import { useData } from '../contexts/DataContext';
@@ -7,6 +7,7 @@ import AnimatedButton from '../components/AnimatedButton';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
+import { trackProjectView, trackProjectClick, isDevelopmentMode } from '../utils/analytics';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -26,8 +27,23 @@ const Projects: React.FC = () => {
   const visibleProjects = showAll ? projects : projects.slice(0, 3);
   const hasMoreProjects = projects.length > 3;
 
+  // Track project views when they become visible
+  useEffect(() => {
+    if (!isDevelopmentMode()) {
+      visibleProjects.forEach(project => {
+        trackProjectView(project.id, project.title);
+      });
+    }
+  }, [visibleProjects]);
+
   const toggleShowAll = () => {
     setShowAll(!showAll);
+  };
+
+  const handleProjectLinkClick = (projectId: string, projectTitle: string, actionType: 'github' | 'live') => {
+    if (!isDevelopmentMode()) {
+      trackProjectClick(projectId, projectTitle, actionType);
+    }
   };
 
   return (
@@ -104,6 +120,7 @@ const Projects: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn"
+                      onClick={() => handleProjectLinkClick(project.id, project.title, 'github')}
                     >
                       {t('projects.viewCode')}
                     </a>
@@ -114,6 +131,7 @@ const Projects: React.FC = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-primary"
+                      onClick={() => handleProjectLinkClick(project.id, project.title, 'live')}
                     >
                       {t('projects.viewProject')}
                     </a>
