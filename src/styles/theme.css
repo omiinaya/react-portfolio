@@ -2303,7 +2303,7 @@ p {
 
 .contact-panel-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: var(--spacing-8);
   align-items: start;
 }
@@ -2343,6 +2343,35 @@ p {
 
 .contact-info-item.slim .contact-info-value {
   font-size: 1rem;
+}
+
+/* Ultra slim contact card variant */
+.contact-info-item.ultra-slim {
+  padding: var(--spacing-2) var(--spacing-3);
+  gap: var(--spacing-2);
+  min-height: auto;
+}
+
+.contact-info-item.ultra-slim .contact-icon-wrapper {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+}
+
+.contact-info-item.ultra-slim .contact-icon-wrapper svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-info-item.ultra-slim .contact-info-label {
+  font-size: 0.6875rem;
+  margin-bottom: var(--spacing-0);
+  letter-spacing: 0.03em;
+}
+
+.contact-info-item.ultra-slim .contact-info-value {
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .contact-info-item:hover {
@@ -2397,10 +2426,11 @@ p {
   color: hsl(var(--primary) / 0.8);
 }
 
-/* Map Section */
-.map-section {
-  grid-column: 2;
-  grid-row: 1;
+/* Left Column containing contact info and map */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
 }
 
 .map-container-executive {
@@ -2434,7 +2464,7 @@ p {
 
 /* Social Section */
 .social-section {
-  grid-column: 3;
+  grid-column: 2;
   grid-row: 1;
 }
 
@@ -2546,22 +2576,12 @@ p {
 /* Responsive Design for Executive Contact Panel */
 @media (max-width: 1024px) {
   .contact-panel-content {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-6);
   }
   
-  .contact-info-column {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  
-  .map-column {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  
   .social-column {
-    grid-column: 1 / -1;
+    grid-column: 1;
     grid-row: 2;
   }
   
@@ -2576,28 +2596,38 @@ p {
     gap: var(--spacing-6);
   }
   
-  .contact-info-column,
-  .map-column,
   .social-column {
-    grid-column: 1;
-  }
-  
-  .contact-info-column {
-    grid-row: 1;
-  }
-  
-  .map-column {
     grid-row: 2;
-  }
-  
-  .social-column {
-    grid-row: 3;
   }
   
   .social-links-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-2);
+  }
+  
+  /* Make ultra-slim cards even more compact on mobile */
+  .contact-info-item.ultra-slim {
+    padding: var(--spacing-1) var(--spacing-2);
+    gap: var(--spacing-1);
+  }
+  
+  .contact-info-item.ultra-slim .contact-icon-wrapper {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .contact-info-item.ultra-slim .contact-icon-wrapper svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .contact-info-item.ultra-slim .contact-info-label {
+    font-size: 0.625rem;
+  }
+  
+  .contact-info-item.ultra-slim .contact-info-value {
+    font-size: 0.8125rem;
   }
 }
 

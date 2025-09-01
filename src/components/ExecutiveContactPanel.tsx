@@ -35,41 +35,12 @@ const ExecutiveContactPanel: React.FC = () => {
         </p>
       </div>
 
-      {/* Main Content Grid */}
+      {/* Main Content Grid - 2 Column Layout */}
       <div className="contact-panel-content">
-        {/* Left Column - Slim Contact Cards */}
-        <div className="contact-info-column">
-          <div className="contact-info-section">
-            <div className="contact-info-item slim">
-              <div className="contact-icon-wrapper">
-                <EmailIcon />
-              </div>
-              <div className="contact-info-content">
-                <h4 className="contact-info-label">{t('contact.email')}</h4>
-                <a
-                  href={`mailto:${profile.basics.email}`}
-                  className="contact-info-value contact-link"
-                  onClick={() => handleSocialClick('Email', `mailto:${profile.basics.email}`)}
-                >
-                  {profile.basics.email}
-                </a>
-              </div>
-            </div>
+        {/* Left Column - Contact Info + Map */}
+        <div className="left-column">
 
-            <div className="contact-info-item slim">
-              <div className="contact-icon-wrapper">
-                <LocationIcon />
-              </div>
-              <div className="contact-info-content">
-                <h4 className="contact-info-label">{t('contact.location')}</h4>
-                <span className="contact-info-value">{profile.basics.location}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Center Column - Map (positioned below contact info) */}
-        <div className="map-column">
+          {/* Map positioned below contact info in same column */}
           <div className="map-section">
             <div className="map-container-executive">
               <div className="openstreetmap-frame">
@@ -95,7 +66,7 @@ const ExecutiveContactPanel: React.FC = () => {
         {/* Right Column - Vertical Social Links */}
         <div className="social-column">
           <div className="social-section">
-            <h4 className="social-section-title">{t('contact.connect', 'Connect With Me')}</h4>
+            
             <div className="social-links-vertical">
               {profile.sections.profiles.items.map((profileItem) => (
                 <a
