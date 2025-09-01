@@ -4,6 +4,7 @@ import { Project } from '../types';
 import { useData } from '../contexts/DataContext';
 import AnimatedSection from '../components/AnimatedSection';
 import AnimatedButton from '../components/AnimatedButton';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
 
@@ -30,7 +31,14 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <AnimatedSection id="projects" className="projects section">
+    <>
+      <SEO
+        title={`Projects - ${profile.basics.name} Portfolio`}
+        description={`Explore ${profile.basics.name}'s portfolio projects including React applications, full-stack development, and TypeScript projects.`}
+        keywords={['projects', 'portfolio', 'react projects', 'typescript', 'full stack', 'web development']}
+        type="website"
+      />
+      <AnimatedSection id="projects" className="projects section">
       <div className="container">
         <h2 className="section-title">{t('projects.title')}</h2>
         <motion.div
@@ -128,7 +136,8 @@ const Projects: React.FC = () => {
           </div>
         )}
       </div>
-    </AnimatedSection>
+      </AnimatedSection>
+    </>
   );
 };
 

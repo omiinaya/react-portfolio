@@ -4,6 +4,7 @@ import { useData } from '../contexts/DataContext';
 import CertificationCard from '../components/CertificationCard';
 import AnimatedSection from '../components/AnimatedSection';
 import AnimatedButton from '../components/AnimatedButton';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
 
@@ -21,7 +22,14 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <AnimatedSection id="certifications" className="certifications section">
+    <>
+      <SEO
+        title={`Certifications - ${profile.basics.name} Portfolio`}
+        description={`View ${profile.basics.name}'s professional certifications including CompTIA A+, Tech+, ITF+, Full Stack Development, and Microsoft certifications.`}
+        keywords={['certifications', 'comptia', 'microsoft', 'full stack developer', 'professional certifications', 'IT certifications']}
+        type="website"
+      />
+      <AnimatedSection id="certifications" className="certifications section">
       <div className="container">
         <h2 className="section-title">{t('certifications.title')}</h2>
         <motion.div
@@ -53,7 +61,8 @@ const Certifications: React.FC = () => {
           </div>
         )}
       </div>
-    </AnimatedSection>
+      </AnimatedSection>
+    </>
   );
 };
 

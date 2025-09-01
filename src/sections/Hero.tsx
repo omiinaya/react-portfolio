@@ -5,6 +5,7 @@ import { useData } from '../contexts/DataContext';
 import { useTheme } from '../contexts/ThemeContext';
 import AnimatedSection from '../components/AnimatedSection';
 import AnimatedButton from '../components/AnimatedButton';
+import SEO from '../components/SEO';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -21,7 +22,14 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <AnimatedSection id="hero" className="hero section">
+    <>
+      <SEO
+        title={`${profile.basics.name} - ${profile.basics.headline} Portfolio`}
+        description={`Welcome to the portfolio of ${profile.basics.name}, ${profile.basics.headline} based in ${profile.basics.location}. Specializing in React, TypeScript, and full-stack development.`}
+        keywords={['portfolio', 'developer', profile.basics.headline.toLowerCase(), profile.basics.location, 'react', 'typescript']}
+        type="profile"
+      />
+      <AnimatedSection id="hero" className="hero section">
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
@@ -68,7 +76,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </AnimatedSection>
+      </AnimatedSection>
+    </>
   );
 };
 

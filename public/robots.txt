@@ -1,3 +1,66 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://omar.mrxlab.net/sitemap.xml
+
+# Crawl delay (requests per second)
+Crawl-delay: 1
+
+# Disallow specific paths
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /admin/
+Disallow: /login/
+
+# Allow search engines to index all pages
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Social media crawlers
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 2
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 2
+
+# Image crawlers
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
+# Allow all asset files
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.woff$
+Allow: /*.woff2$
+Allow: /*.ttf$
+Allow: /*.eot$
+
+# Host directive
+Host: omar.mrxlab.net
+
+# Last updated
+# Last update: 2025-09-01
