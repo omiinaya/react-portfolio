@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { smoothScrollTo } from '../utils/smoothScroll';
 import { useData } from '../contexts/DataContext';
 import { useTheme } from '../contexts/ThemeContext';
+import AnimatedSection from '../components/AnimatedSection';
+import AnimatedButton from '../components/AnimatedButton';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -19,7 +21,7 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="hero" className="hero section">
+    <AnimatedSection id="hero" className="hero section">
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
@@ -31,12 +33,18 @@ const Hero: React.FC = () => {
               {t('hero.description')}
             </p>
             <div className="hero-actions">
-              <button onClick={() => handleScrollTo('#projects')} className="btn btn-primary">
+              <AnimatedButton
+                onClick={() => handleScrollTo('#projects')}
+                variant="primary"
+              >
                 {t('hero.cta')}
-              </button>
-              <button onClick={() => handleScrollTo('#contact')} className="btn">
+              </AnimatedButton>
+              <AnimatedButton
+                onClick={() => handleScrollTo('#contact')}
+                variant="secondary"
+              >
                 {t('contact.title')}
-              </button>
+              </AnimatedButton>
             </div>
           </div>
           <div className="hero-stats">
@@ -60,7 +68,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

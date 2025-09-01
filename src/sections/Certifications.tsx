@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
 import CertificationCard from '../components/CertificationCard';
+import AnimatedSection from '../components/AnimatedSection';
+import AnimatedButton from '../components/AnimatedButton';
+import { motion } from 'framer-motion';
+import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
 
 const Certifications: React.FC = () => {
   const { t } = useTranslation();
@@ -17,28 +21,39 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <section id="certifications" className="certifications section">
+    <AnimatedSection id="certifications" className="certifications section">
       <div className="container">
         <h2 className="section-title">{t('certifications.title')}</h2>
-        <div className="certifications-grid">
+        <motion.div
+          className="certifications-grid"
+          variants={withReducedMotion(staggerContainerVariants)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
+        >
           {visibleCertifications.map((cert) => (
-            <CertificationCard key={cert.id} certification={cert} />
+            <motion.div
+              key={cert.id}
+              variants={withReducedMotion(staggerItemVariants)}
+            >
+              <CertificationCard certification={cert} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         {hasMoreCertifications && (
           <div className="certifications-toggle">
-            <button
-              className="btn btn-primary certifications-toggle-btn"
+            <AnimatedButton
+              className="certifications-toggle-btn"
               onClick={toggleShowAll}
             >
               {showAll
                 ? t('certifications.showLess')
                 : t('certifications.showAll', { count: certifications.length })}
-            </button>
+            </AnimatedButton>
           </div>
         )}
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

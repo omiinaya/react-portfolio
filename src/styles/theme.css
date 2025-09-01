@@ -1756,3 +1756,65 @@ p {
   opacity: 0.9;
 }
 
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .btn:hover,
+  .nav-link:hover,
+  .theme-toggle:hover,
+  .github-link:hover,
+  .language-toggle:hover,
+  .footer-link:hover,
+  .social-tag:hover,
+  .skill-tag:hover,
+  .tech-tag:hover,
+  .skill-bubble:hover,
+  .social-media-link:hover,
+  .logo-button:hover,
+  .back-to-top:hover,
+  .gitroll-link:hover,
+  .certification-card:hover,
+  .project-card:hover,
+  .experience-item:hover {
+    transform: none !important;
+  }
+  
+  .certifications-grid > *,
+  .projects-grid > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .project-image-content,
+  .github-stats-image,
+  .github-languages-image,
+  .gitroll-image {
+    transition: none !important;
+  }
+  
+  .nav-link::after {
+    transition: none !important;
+    width: 0 !important;
+  }
+  
+  .language-dropdown {
+    animation: none !important;
+  }
+}
+
+/* Smooth scrolling for users who don't prefer reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

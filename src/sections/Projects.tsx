@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Project } from '../types';
 import { useData } from '../contexts/DataContext';
+import AnimatedSection from '../components/AnimatedSection';
+import AnimatedButton from '../components/AnimatedButton';
+import { motion } from 'framer-motion';
+import { staggerContainerVariants, staggerItemVariants, withReducedMotion } from '../utils/animations';
 
 const Projects: React.FC = () => {
   const { t } = useTranslation();
@@ -26,12 +30,22 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="projects section">
+    <AnimatedSection id="projects" className="projects section">
       <div className="container">
         <h2 className="section-title">{t('projects.title')}</h2>
-        <div className="projects-grid">
+        <motion.div
+          className="projects-grid"
+          variants={withReducedMotion(staggerContainerVariants)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
+        >
           {visibleProjects.map((project) => (
-            <div key={project.id} className="project-card card">
+            <motion.div
+              key={project.id}
+              className="project-card card"
+              variants={withReducedMotion(staggerItemVariants)}
+            >
               <div className="project-image">
                 {project.image ? (
                   <img
@@ -98,23 +112,23 @@ const Projects: React.FC = () => {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         {hasMoreProjects && (
           <div className="projects-toggle">
-            <button
-              className="btn btn-primary projects-toggle-btn"
+            <AnimatedButton
+              className="projects-toggle-btn"
               onClick={toggleShowAll}
             >
               {showAll
                 ? t('projects.showLess')
                 : t('projects.showAll', { count: projects.length })}
-            </button>
+            </AnimatedButton>
           </div>
         )}
       </div>
-    </section>
+    </AnimatedSection>
   );
 };
 

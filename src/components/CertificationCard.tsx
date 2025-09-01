@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
 interface CertificationCardProps {
   certification: {
@@ -21,7 +22,14 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
   const { t } = useTranslation();
 
   return (
-    <div className="certification-card card">
+    <motion.div
+      className="certification-card card"
+      whileHover={{
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+      transition={{ type: 'spring', stiffness: 300 }}
+    >
       {/* Image Section */}
       <div className="certification-image">
         <div className="image-container">
@@ -101,7 +109,7 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
           {t('certifications.issued')}: {certification.date}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
