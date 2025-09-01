@@ -6,7 +6,7 @@
     "location": "Miami, FL",
     "url": {
       "label": "",
-      "href": "https://mrxlab.net"
+      "href": "https://omar.mrxlab.net"
     },
     "customFields": [],
     "picture": {
@@ -51,10 +51,10 @@
           "name": "Full Stack Developer",
           "issuer": "University of Miami",
           "date": "Jun 2020",
-          "summary": "",
+          "summary": "HTML, CSS, JavaScript, jQuery, Firebase, Node.js, MySQL, MongoDB, Mongoose, and React.js, in addition to the skills necessary to learn and resolve issues independently.",
           "url": {
             "label": "",
-            "href": ""
+            "href": "https://www.credential.net/f0cf59e9-957e-4e02-8763-c8d26ff7967c"
           },
           "skills": ["React", "Node.js", "JavaScript", "HTML", "CSS", "Databases"],
           "image": "/images/certifications/full-stack-developer.png"
@@ -93,7 +93,7 @@
           "name": "ITF+",
           "issuer": "Comptia",
           "date": "Apr 2024",
-          "summary": "",
+          "summary": "ITF+ certifies the knowledge and skills required to identify and explain the basics of computing, IT infrastructure, application and software and software development.",
           "url": {
             "label": "",
             "href": "https://www.credly.com/badges/e4f3d69c-895d-422f-aa39-fa34a7918862"
