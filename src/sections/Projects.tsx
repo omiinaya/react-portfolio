@@ -33,7 +33,24 @@ const Projects: React.FC = () => {
           {visibleProjects.map((project) => (
             <div key={project.id} className="project-card card">
               <div className="project-image">
-                <div className="image-placeholder">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="project-image-content"
+                    onError={(e) => {
+                      // Fallback to placeholder if image fails to load
+                      const imgElement = e.currentTarget as HTMLImageElement;
+                      imgElement.style.display = 'none';
+                      
+                      const placeholder = imgElement.nextElementSibling as HTMLElement;
+                      if (placeholder) {
+                        placeholder.style.display = 'flex';
+                      }
+                    }}
+                  />
+                ) : null}
+                <div className="image-placeholder" style={{ display: project.image ? 'none' : 'flex' }}>
                   <svg
                     width="60"
                     height="60"

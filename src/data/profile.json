@@ -331,32 +331,45 @@
       "id": "projects",
       "items": [
          {
-          "id": "1",
-          "visible": true,
-          "name": "Weather Dashboard",
-          "description": "A responsive weather application with location-based forecasts and interactive charts.",
-          "technologies": ["React", "Chart.js", "OpenWeather API", "CSS3"],
-          "githubUrl": "https://github.com/omiinaya/react-weather",
-          "liveUrl": "https://weather.mrxlab.net"
-        },
-        {
-          "id": "2",
-          "visible": true,
-          "name": "Task Management App",
-          "description": "A collaborative task management application with real-time updates and team collaboration features.",
-          "technologies": ["React", "TypeScript", "Socket.io", "PostgreSQL"],
-          "githubUrl": "https://github.com/omiinaya/task-manager",
-          "liveUrl": "https://taskmanager-demo.example.com"
-        },
-        {
-          "id": "4",
-          "visible": true,
-          "name": "Portfolio Website",
-          "description": "A modern portfolio website with dark mode support and responsive design.",
-          "technologies": ["React", "TypeScript", "CSS3", "Vite"],
-          "githubUrl": "https://github.com/omiinaya/portfolio",
-          "liveUrl": "https://portfolio-demo.example.com"
-        }
+           "id": "1",
+           "visible": true,
+           "name": "Weather Dashboard",
+           "description": "A responsive weather application with location-based forecasts and interactive charts.",
+           "technologies": ["React", "Chart.js", "OpenWeather API", "CSS3"],
+           "githubUrl": "https://github.com/omiinaya/react-weather",
+           "liveUrl": "https://weather.mrxlab.net",
+           "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
+         },
+         {
+           "id": "2",
+           "visible": true,
+           "name": "Task Management App",
+           "description": "A collaborative task management application with real-time updates and team collaboration features.",
+           "technologies": ["React", "TypeScript", "Socket.io", "PostgreSQL"],
+           "githubUrl": "https://github.com/omiinaya/task-manager",
+           "liveUrl": "https://taskmanager-demo.example.com",
+           "image": "/images/projects/task-manager.png"
+         },
+         {
+           "id": "3",
+           "visible": true,
+           "name": "E-Commerce Platform",
+           "description": "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
+           "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+           "githubUrl": "https://github.com/omiinaya/ecommerce-platform",
+           "liveUrl": "https://ecommerce-demo.example.com",
+           "image": "/images/projects/ecommerce-platform.png"
+         },
+         {
+           "id": "4",
+           "visible": true,
+           "name": "Portfolio Website",
+           "description": "A modern portfolio website with dark mode support and responsive design.",
+           "technologies": ["React", "TypeScript", "CSS3", "Vite"],
+           "githubUrl": "https://github.com/omiinaya/portfolio",
+           "liveUrl": "https://portfolio-demo.example.com",
+           "image": "/images/projects/portfolio-website.png"
+         }
       ]
     },
     "publications": {
