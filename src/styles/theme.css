@@ -1455,6 +1455,9 @@ p {
 
 #contact {
   margin-bottom: var(--spacing-12);
+  min-height: 600px; /* Ensure adequate height for smooth scrolling */
+  display: flex;
+  align-items: center;
 }
 
 /* Contact section styles */
