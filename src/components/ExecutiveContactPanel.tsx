@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useData } from '../contexts/DataContext';
 import { motion } from 'framer-motion';
 import { slideInFromTop, withReducedMotion } from '../utils/animations';
@@ -6,10 +6,38 @@ import { trackSocialMediaClick, isDevelopmentMode } from '../utils/analytics';
 
 const ExecutiveContactPanel: React.FC = () => {
   const { profile } = useData();
+  const [formData, setFormData] = useState({
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  // Miami area coordinates for approximate location
-  const lat = 25.7617;
-  const lng = -80.1918;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // Simulate form submission
+    try {
+      // TODO: Implement actual form submission logic
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setSubmitStatus('success');
+      setFormData({ email: '', message: '' });
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const handleSocialClick = (network: string, url: string) => {
     if (!isDevelopmentMode()) {
@@ -27,27 +55,62 @@ const ExecutiveContactPanel: React.FC = () => {
     >
       {/* Main Content Grid - 3 Column Layout (Map | Divider | Social Links) */}
       <div className="contact-panel-content" style={{ gridTemplateColumns: '2fr auto 1fr' }}>
-        {/* Left Column - Contact Info + Map */}
+        {/* Left Column - Contact Form */}
         <div className="left-column">
-
-          {/* Map positioned below contact info in same column */}
-          <div className="map-section">
-            <div className="map-container-executive">
-              <div className="openstreetmap-frame">
-                <iframe
-                  width="100%"
-                  height="280"
-                  frameBorder="0"
-                  scrolling="no"
-                  marginHeight={0}
-                  marginWidth={0}
-                  src={`https://www.openstreetmap.org/export/embed.html?bbox=${lng-0.08}%2C${lat-0.08}%2C${lng+0.08}%2C${lat+0.08}&layer=mapnik&marker=${lat}%2C${lng}`}
-                  title="Approximate Location Map"
-                  loading="lazy"
+          
+            <form onSubmit={handleSubmit} className="executive-contact-form">
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="your.email@example.com"
                 />
               </div>
-            </div>
-          </div>
+              <div className="form-group">
+                <label htmlFor="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Tell me about your project or inquiry..."
+                  rows={5}
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <span className="spinner"></span>
+                    Sending...
+                  </>
+                ) : (
+                  'Send Message'
+                )}
+              </button>
+              
+              {submitStatus === 'success' && (
+                <div className="form-status success">
+                  Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="form-status error">
+                  Something went wrong. Please try again or contact me directly.
+                </div>
+              )}
+            </form>
+          
         </div>
 
         {/* Vertical Divider with "or" text */}

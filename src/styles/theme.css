@@ -1880,6 +1880,91 @@ p {
   z-index: 1;
 }
 
+/* Executive Contact Form Styles */
+.contact-form-section {
+  padding: var(--spacing-6);
+  background-color: hsl(var(--card));
+  border-radius: var(--radius-lg);
+  border: 1px solid hsl(var(--border));
+  height: 100%;
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin-bottom: var(--spacing-6);
+  text-align: center;
+}
+
+.executive-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.executive-contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.executive-contact-form .form-group label {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+}
+
+.executive-contact-form .form-group input,
+.executive-contact-form .form-group textarea {
+  padding: var(--spacing-3);
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: inherit;
+  transition: border-color var(--transition-fast);
+  font-size: 0.875rem;
+  width: 100%;
+}
+
+.executive-contact-form .form-group input:focus-visible,
+.executive-contact-form .form-group textarea:focus-visible {
+  outline: none;
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
+}
+
+.executive-contact-form .form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.executive-contact-form .btn {
+  align-self: flex-start;
+  min-width: 140px;
+}
+
+.executive-contact-form .form-status {
+  padding: var(--spacing-3);
+  border-radius: var(--radius);
+  margin-top: var(--spacing-4);
+  border: 1px solid;
+  font-size: 0.875rem;
+}
+
+.executive-contact-form .form-status.success {
+  background-color: hsl(var(--success) / 0.1);
+  border-color: hsl(var(--success));
+  color: hsl(var(--success-foreground));
+}
+
+.executive-contact-form .form-status.error {
+  background-color: hsl(var(--destructive) / 0.1);
+  border-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
 /* Contact Social Section - Positioned below both contact columns */
 .contact-social-section {
   grid-column: 1 / -1;
