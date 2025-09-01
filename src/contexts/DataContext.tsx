@@ -82,10 +82,8 @@ export interface ProfileData {
         name: string;
         description: string;
         technologies: string[];
-        url: {
-          label: string;
-          href: string;
-        };
+        githubUrl: string;
+        liveUrl: string;
         image?: string;
       }>;
     };

@@ -13,8 +13,8 @@ const Projects: React.FC = () => {
     title: item.name,
     description: item.description,
     technologies: item.technologies,
-    githubUrl: item.url.href,
-    liveUrl: item.url.href,
+    githubUrl: item.githubUrl,
+    liveUrl: item.liveUrl,
     image: item.image
   }));
 
