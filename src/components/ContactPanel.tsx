@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { slideInFromTop, withReducedMotion } from '../utils/animations';
 import { trackSocialMediaClick, isDevelopmentMode } from '../utils/analytics';
 
-const ExecutiveContactPanel: React.FC = () => {
+const ContactPanel: React.FC = () => {
   const { profile } = useData();
   const [formData, setFormData] = useState({
     email: '',
@@ -47,18 +47,18 @@ const ExecutiveContactPanel: React.FC = () => {
 
   return (
     <motion.div
-      className="executive-contact-panel"
+      className="contact-panel"
       variants={withReducedMotion(slideInFromTop)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-50px' }}
     >
       {/* Main Content Grid - 3 Column Layout (Map | Divider | Social Links) */}
-      <div className="contact-panel-content" style={{ gridTemplateColumns: '2fr auto 1fr' }}>
+      <div className="contact-panel-content" style={{ gridTemplateColumns: '3fr auto 1fr' }}>
         {/* Left Column - Contact Form */}
         <div className="left-column">
           
-            <form onSubmit={handleSubmit} className="executive-contact-form">
+            <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
@@ -197,4 +197,4 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-export default ExecutiveContactPanel;
+export default ContactPanel;

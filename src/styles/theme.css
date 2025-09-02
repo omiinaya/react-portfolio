@@ -1880,7 +1880,7 @@ p {
   z-index: 1;
 }
 
-/* Executive Contact Form Styles */
+/*  Contact Form Styles */
 .contact-form-section {
   padding: var(--spacing-6);
   background-color: hsl(var(--card));
@@ -1897,26 +1897,26 @@ p {
   text-align: center;
 }
 
-.executive-contact-form {
+.contact-form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
 }
 
-.executive-contact-form .form-group {
+.contact-form .form-group {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2);
 }
 
-.executive-contact-form .form-group label {
+.contact-form .form-group label {
   font-weight: 500;
   color: hsl(var(--foreground));
   font-size: 0.875rem;
 }
 
-.executive-contact-form .form-group input,
-.executive-contact-form .form-group textarea {
+.contact-form .form-group input,
+.contact-form .form-group textarea {
   padding: var(--spacing-3);
   border: 1px solid hsl(var(--border));
   border-radius: var(--radius);
@@ -1926,26 +1926,27 @@ p {
   transition: border-color var(--transition-fast);
   font-size: 0.875rem;
   width: 100%;
+  max-width: none; /* Remove any max-width constraints */
 }
 
-.executive-contact-form .form-group input:focus-visible,
-.executive-contact-form .form-group textarea:focus-visible {
+.contact-form .form-group input:focus-visible,
+.contact-form .form-group textarea:focus-visible {
   outline: none;
   border-color: hsl(var(--ring));
   box-shadow: 0 0 0 3px hsl(var(--ring) / 0.1);
 }
 
-.executive-contact-form .form-group textarea {
+.contact-form .form-group textarea {
   resize: vertical;
   min-height: 120px;
 }
 
-.executive-contact-form .btn {
+.contact-form .btn {
   align-self: flex-start;
   min-width: 140px;
 }
 
-.executive-contact-form .form-status {
+.contact-form .form-status {
   padding: var(--spacing-3);
   border-radius: var(--radius);
   margin-top: var(--spacing-4);
@@ -1953,13 +1954,13 @@ p {
   font-size: 0.875rem;
 }
 
-.executive-contact-form .form-status.success {
+.contact-form .form-status.success {
   background-color: hsl(var(--success) / 0.1);
   border-color: hsl(var(--success));
   color: hsl(var(--success-foreground));
 }
 
-.executive-contact-form .form-status.error {
+.contact-form .form-status.error {
   background-color: hsl(var(--destructive) / 0.1);
   border-color: hsl(var(--destructive));
   color: hsl(var(--destructive-foreground));
@@ -2252,6 +2253,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
+  width: 100%; /* Ensure full width utilization */
 }
 
 .social-link {
@@ -2386,8 +2388,8 @@ p {
   }
 }
 
-/* Executive Contact Panel Styles */
-.executive-contact-panel {
+/*  Contact Panel Styles */
+.contact-panel {
   background-color: hsl(var(--card));
   border-radius: var(--radius-xl);
   border: 1px solid hsl(var(--border));
@@ -2396,9 +2398,12 @@ p {
   backdrop-filter: blur(10px);
   background-color: hsl(var(--card) / 0.95);
   transition: all var(--transition-normal);
+  max-width: 1200px; /* Increased from default container width */
+  margin: 0 auto;
+  width: 100%;
 }
 
-.executive-contact-panel:hover {
+.contact-panel:hover {
   box-shadow: var(--shadow-2xl);
   transform: translateY(-2px);
 }
@@ -2424,7 +2429,7 @@ p {
 
 .contact-panel-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 2.5fr; /* Increased social column ratio for wider cards */
   gap: var(--spacing-8);
   align-items: start;
 }
@@ -2552,9 +2557,10 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
+  width: 100%; /* Ensure full width utilization */
 }
 
-.map-container-executive {
+.map-container {
   width: 100%;
 }
 
@@ -2597,7 +2603,7 @@ p {
   text-align: center;
 }
 
-.social-links-executive {
+.social-links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-3);
@@ -2614,13 +2620,14 @@ p {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
-  padding: var(--spacing-3);
+  padding: var(--spacing-4); /* Increased padding for better spacing */
   background-color: hsl(var(--accent));
   color: hsl(var(--accent-foreground));
   text-decoration: none;
   border-radius: var(--radius);
   border: 1px solid hsl(var(--border));
   transition: all var(--transition-fast);
+  min-width: 200px; /* Minimum width to prevent cards from being too narrow */
 }
 
 .social-link-vertical:hover {
@@ -2652,7 +2659,7 @@ p {
   font-size: 0.875rem;
 }
 
-.social-link-executive {
+.social-link {
   display: flex;
   align-items: center;
   gap: var(--spacing-3);
@@ -2665,7 +2672,7 @@ p {
   transition: all var(--transition-fast);
 }
 
-.social-link-executive:hover {
+.social-link:hover {
   background-color: hsl(var(--primary));
   color: hsl(var(--primary-foreground));
   transform: translateY(-2px);
@@ -2684,7 +2691,7 @@ p {
   transition: all var(--transition-fast);
 }
 
-.social-link-executive:hover .social-icon-wrapper {
+.social-link:hover .social-icon-wrapper {
   background-color: hsl(var(--primary-foreground));
   color: hsl(var(--primary));
 }
@@ -2694,7 +2701,7 @@ p {
   font-size: 0.875rem;
 }
 
-/* Responsive Design for Executive Contact Panel */
+/* Responsive Design for  Contact Panel */
 @media (max-width: 1024px) {
   .contact-panel-content {
     grid-template-columns: 1fr !important;
@@ -2710,8 +2717,13 @@ p {
     grid-row: 2;
   }
   
-  .social-links-executive {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  .social-links {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Increased minimum width for better card sizing */
+  }
+  
+  /* Remove min-width constraint on tablets for better responsiveness */
+  .social-link-vertical {
+    min-width: unset;
   }
 }
 
@@ -2728,7 +2740,13 @@ p {
   .social-links-vertical {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-2);
+    gap: var(--spacing-3); /* Increased gap for better spacing */
+  }
+  
+  /* Ensure social cards have proper padding on mobile */
+  .social-link-vertical {
+    padding: var(--spacing-3);
+    min-width: unset; /* Remove fixed min-width on mobile */
   }
   
   /* Make ultra-slim cards even more compact on mobile */
@@ -2763,7 +2781,7 @@ p {
 }
 
 @media (max-width: 768px) {
-  .executive-contact-panel {
+  .contact-panel {
     padding: var(--spacing-6);
   }
   
@@ -2785,7 +2803,7 @@ p {
     font-size: 1rem;
   }
   
-  .social-links-executive {
+  .social-links {
     grid-template-columns: 1fr;
   }
   
@@ -2795,7 +2813,7 @@ p {
 }
 
 @media (max-width: 480px) {
-  .executive-contact-panel {
+  .contact-panel {
     padding: var(--spacing-4);
   }
   
@@ -2807,7 +2825,7 @@ p {
     padding: var(--spacing-3);
   }
   
-  .social-link-executive {
+  .social-link {
     padding: var(--spacing-2);
   }
 }

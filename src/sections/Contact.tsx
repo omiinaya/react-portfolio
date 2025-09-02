@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useData } from '../contexts/DataContext';
 import AnimatedSection from '../components/AnimatedSection';
 import SEO from '../components/SEO';
-import ExecutiveContactPanel from '../components/ExecutiveContactPanel';
+import ContactPanel from '../components/ContactPanel';
 
 const Contact: React.FC = () => {
   const { t } = useTranslation();
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
       <AnimatedSection id="contact" className="contact section">
         <div className="container">
           <h2 className="section-title">{t('contact.title')}</h2>
-          <ExecutiveContactPanel />
+          <ContactPanel />
         </div>
       </AnimatedSection>
     </>

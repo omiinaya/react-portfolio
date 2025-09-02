@@ -96,7 +96,7 @@ export const generateCertificationStructuredData = (certification: any): Structu
       '@type': 'Organization',
       name: certification.issuer
     },
-    credentialCategory: certification.issuer?.includes('Comptia') ? 'Professional Certification' : 'Educational',
+    credentialCategory: certification.issuer?.includes('Comptia') ? ' Certification' : 'Educational',
     validFrom: certification.date
   };
 };

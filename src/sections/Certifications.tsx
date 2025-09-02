@@ -35,8 +35,8 @@ const Certifications: React.FC = () => {
     <>
       <SEO
         title={`Certifications - ${profile.basics.name} Portfolio`}
-        description={`View ${profile.basics.name}'s professional certifications including CompTIA A+, Tech+, ITF+, Full Stack Development, and Microsoft certifications.`}
-        keywords={['certifications', 'comptia', 'microsoft', 'full stack developer', 'professional certifications', 'IT certifications']}
+        description={`View ${profile.basics.name}'s  certifications including CompTIA A+, Tech+, ITF+, Full Stack Development, and Microsoft certifications.`}
+        keywords={['certifications', 'comptia', 'microsoft', 'full stack developer', ' certifications', 'IT certifications']}
         type="website"
       />
       <AnimatedSection id="certifications" className="certifications section">
