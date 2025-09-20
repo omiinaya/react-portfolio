@@ -337,8 +337,8 @@
            "description": "A web application for testing various computer parts online.",
            "technologies": ["React", "TypeScript", "CSS3"],
            "githubUrl": "https://github.com/omiinaya/react-weather",
-           "liveUrl": "https://weather.mrxlab.net",
-           "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
+           "liveUrl": "https://pctestonline.com",
+           "image": "https://cdn.mrxlab.net/api/cdn/download/images/pctestonline.png"
          },
          {
            "id": "2",
