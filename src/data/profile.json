@@ -333,9 +333,9 @@
          {
            "id": "1",
            "visible": true,
-           "name": "Weather Dashboard",
-           "description": "A responsive weather application with location-based forecasts and interactive charts.",
-           "technologies": ["React", "Chart.js", "OpenWeather API", "CSS3"],
+           "name": "PC Test Online",
+           "description": "A web application for testing various computer parts online.",
+           "technologies": ["React", "TypeScript", "CSS3"],
            "githubUrl": "https://github.com/omiinaya/react-weather",
            "liveUrl": "https://weather.mrxlab.net",
            "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
