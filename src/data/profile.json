@@ -343,12 +343,12 @@
          {
            "id": "2",
            "visible": true,
-           "name": "Task Management App",
-           "description": "A collaborative task management application with real-time updates and team collaboration features.",
-           "technologies": ["React", "TypeScript", "Socket.io", "PostgreSQL"],
-           "githubUrl": "https://github.com/omiinaya/task-manager",
-           "liveUrl": "https://taskmanager-demo.example.com",
-           "image": "/images/projects/task-manager.png"
+           "name": "Weather App",
+           "description": "A responsive weather application with location-based forecasts and interactive charts.",
+           "technologies": ["React", "TypeScript", "ChartJS", "OpenWeather API"],
+           "githubUrl": "https://github.com/omiinaya/react-weather",
+           "liveUrl": "https://weather.mrxlab.net",
+           "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
          },
          {
            "id": "3",
