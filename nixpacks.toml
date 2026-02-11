@@ -1,8 +1,14 @@
-[phases.build]
-cmds = ["npm install --legacy-peer-deps", "npm run build"]
-
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+nixPkgs = ["nodejs_22"]
+
+[phases.install]
+cmds = ["npm ci --legacy-peer-deps"]
+cacheDirectories = ["/root/.npm"]
+paths = ["/app/node_modules/.bin"]
+
+[phases.build]
+cmds = ["npm run build"]
+cacheDirectories = ["node_modules/.cache"]
 
 [start]
 cmd = "npx serve -s build -l 3000"
