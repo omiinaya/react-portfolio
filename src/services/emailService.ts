@@ -1,4 +1,4 @@
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 // EmailJS configuration - these should be set as environment variables in production
 const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'your_service_id';
@@ -23,12 +23,10 @@ export const sendContactEmail = async (formData: ContactFormData): Promise<{ suc
     }
 
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
+      name: formData.name,
       message: formData.message,
-      to_email: 'omar@mrxlab.net', // Recipient email
-      reply_to: formData.email,
-      subject: `New Contact Form Submission from ${formData.name}`
+      email: formData.email,
+      reply_to: formData.email
     };
 
     const result = await emailjs.send(

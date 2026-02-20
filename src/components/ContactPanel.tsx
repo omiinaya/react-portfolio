@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useData } from '../contexts/DataContext';
 import { motion } from 'framer-motion';
 import { slideInFromTop, withReducedMotion } from '../utils/animations';
 import { trackSocialMediaClick, isDevelopmentMode } from '../utils/analytics';
+import { sendContactEmail } from '../services/emailService';
 
 const ContactPanel: React.FC = () => {
   const { profile } = useData();
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  useEffect(() => {
+    if (submitStatus === 'success') {
+      const timer = setTimeout(() => setSubmitStatus('idle'), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -26,12 +35,19 @@ const ContactPanel: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    // Simulate form submission
     try {
-      // TODO: Implement actual form submission logic
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus('success');
-      setFormData({ email: '', message: '' });
+      const result = await sendContactEmail({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message
+      });
+      
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
       setSubmitStatus('error');
     } finally {
@@ -59,6 +75,18 @@ const ContactPanel: React.FC = () => {
         <div className="left-column">
           
             <form onSubmit={handleSubmit} className="contact-form">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  placeholder="Your name"
+                />
+              </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input
