@@ -1331,7 +1331,6 @@ p {
   margin: -1px -1px 0 -1px; /* Extend to cover card borders */
   background: #18181B;
   border-radius: 50%; /* Make container a perfect circle */
-  margin: 0 auto; /* Center the circle */
 }
 
 .certification-image::before {
@@ -2396,7 +2395,6 @@ p {
   padding: var(--spacing-8);
   box-shadow: var(--shadow-xl);
   backdrop-filter: blur(10px);
-  background-color: hsl(var(--card) / 0.95);
   transition: all var(--transition-normal);
   max-width: 1200px; /* Increased from default container width */
   margin: 0 auto;
