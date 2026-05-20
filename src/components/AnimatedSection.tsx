@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { sectionRevealVariants, withReducedMotion } from '../utils/animations';
+import React, { ReactNode } from "react";
+import { motion } from "framer-motion";
+import { sectionRevealVariants, withReducedMotion } from "../utils/animations";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -9,11 +9,11 @@ interface AnimatedSectionProps {
   viewport?: { once?: boolean; margin?: string };
 }
 
-const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
-  children, 
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+  children,
   id,
-  className = '',
-  viewport = { once: true, margin: '-50px' }
+  className = "",
+  viewport = { once: true, margin: "-50px" },
 }) => {
   return (
     <motion.section

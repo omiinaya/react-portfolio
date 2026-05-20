@@ -1,7 +1,7 @@
-import React, { useCallback, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { smoothScrollTo } from '../utils/smoothScroll';
+import React, { useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { smoothScrollTo } from "../utils/smoothScroll";
 
 interface HamburgerMenuProps {
   isOpen: boolean;
@@ -11,95 +11,104 @@ interface HamburgerMenuProps {
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
 
-  const handleNavClick = useCallback((targetId: string) => {
-    smoothScrollTo(targetId, {
-      duration: 800,
-      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
-      offset: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80
-    });
-    onClose();
-  }, [onClose]);
+  const handleNavClick = useCallback(
+    (targetId: string) => {
+      smoothScrollTo(targetId, {
+        duration: 800,
+        easing: (t) =>
+          t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+        offset:
+          parseInt(
+            getComputedStyle(document.documentElement).getPropertyValue(
+              "--header-height",
+            ),
+          ) || 80,
+      });
+      onClose();
+    },
+    [onClose],
+  );
 
   // Close menu on escape key press
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         onClose();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
 
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const menu = document.querySelector('.mobile-menu');
+      const menu = document.querySelector(".mobile-menu");
       if (menu && !menu.contains(event.target as Node)) {
         onClose();
       }
     };
 
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen, onClose]);
 
   const menuVariants = {
     closed: {
-      x: '100%',
-      transition: { duration: 0.3 }
+      x: "100%",
+      transition: { duration: 0.3 },
     },
     open: {
       x: 0,
-      transition: { duration: 0.3 }
-    }
+      transition: { duration: 0.3 },
+    },
   };
 
   const backdropVariants = {
     closed: {
       opacity: 0,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     open: {
       opacity: 1,
-      transition: { duration: 0.2 }
-    }
+      transition: { duration: 0.2 },
+    },
   };
 
   const navItemVariants = {
     closed: {
       opacity: 0,
       x: 20,
-      transition: { duration: 0.2 }
+      transition: { duration: 0.2 },
     },
     open: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: {
         delay: i * 0.05,
-        duration: 0.3
-      }
-    })
+        duration: 0.3,
+      },
+    }),
   };
 
   const navItems = [
-    { id: '#hero', label: t('header.about') },
-    { id: '#projects', label: t('header.projects') },
-    { id: '#certifications', label: t('header.certifications') },
-    { id: '#contact', label: t('header.contact') }
+    { id: "#hero", label: t("header.about") },
+    { id: "#projects", label: t("header.projects") },
+    { id: "#certifications", label: t("header.certifications") },
+    { id: "#contact", label: t("header.contact") },
   ];
 
   return (
@@ -115,7 +124,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClose }) => {
             exit="closed"
             onClick={onClose}
           />
-          
+
           {/* Menu */}
           <motion.div
             className="mobile-menu"
@@ -125,7 +134,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClose }) => {
             exit="closed"
             role="dialog"
             aria-modal="true"
-            aria-label={t('header.mobileMenu')}
+            aria-label={t("header.mobileMenu")}
           >
             <div className="mobile-menu-content">
               <nav className="mobile-nav">
@@ -146,10 +155,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClose }) => {
                   </motion.button>
                 ))}
               </nav>
-              
+
               <div className="mobile-menu-footer">
                 <p className="mobile-menu-copyright">
-                  © {new Date().getFullYear()} {t('header.logo')}
+                  © {new Date().getFullYear()} {t("header.logo")}
                 </p>
               </div>
             </div>

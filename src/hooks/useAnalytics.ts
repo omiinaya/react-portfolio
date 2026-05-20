@@ -1,18 +1,18 @@
-import { useCallback } from 'react';
-import { 
-  trackEvent, 
-  trackFormSubmission, 
-  trackProjectView, 
-  trackProjectClick, 
-  trackCertificationView, 
-  trackThemeToggle, 
-  trackLanguageChange, 
+import { useCallback } from "react";
+import {
+  trackEvent,
+  trackFormSubmission,
+  trackProjectView,
+  trackProjectClick,
+  trackCertificationView,
+  trackThemeToggle,
+  trackLanguageChange,
   trackSocialMediaClick,
   trackPerformance,
   trackError,
   EventParams,
-  isDevelopmentMode
-} from '../utils/analytics';
+  isDevelopmentMode,
+} from "../utils/analytics";
 
 // Hook for tracking custom events
 export const useTrackEvent = () => {
@@ -34,19 +34,32 @@ export const useTrackFormSubmission = () => {
 
 // Hook for tracking project interactions
 export const useTrackProjectInteraction = () => {
-  const trackProjectViewEvent = useCallback((projectId: string, projectTitle: string) => {
-    if (!isDevelopmentMode()) {
-      trackProjectView(projectId, projectTitle);
-    }
-  }, []);
+  const trackProjectViewEvent = useCallback(
+    (projectId: string, projectTitle: string) => {
+      if (!isDevelopmentMode()) {
+        trackProjectView(projectId, projectTitle);
+      }
+    },
+    [],
+  );
 
-  const trackProjectClickEvent = useCallback((projectId: string, projectTitle: string, actionType: 'github' | 'live') => {
-    if (!isDevelopmentMode()) {
-      trackProjectClick(projectId, projectTitle, actionType);
-    }
-  }, []);
+  const trackProjectClickEvent = useCallback(
+    (
+      projectId: string,
+      projectTitle: string,
+      actionType: "github" | "live",
+    ) => {
+      if (!isDevelopmentMode()) {
+        trackProjectClick(projectId, projectTitle, actionType);
+      }
+    },
+    [],
+  );
 
-  return { trackProjectView: trackProjectViewEvent, trackProjectClick: trackProjectClickEvent };
+  return {
+    trackProjectView: trackProjectViewEvent,
+    trackProjectClick: trackProjectClickEvent,
+  };
 };
 
 // Hook for tracking certification views
@@ -60,7 +73,7 @@ export const useTrackCertificationView = () => {
 
 // Hook for tracking theme toggles
 export const useTrackThemeToggle = () => {
-  return useCallback((theme: 'light' | 'dark') => {
+  return useCallback((theme: "light" | "dark") => {
     if (!isDevelopmentMode()) {
       trackThemeToggle(theme);
     }
@@ -126,6 +139,6 @@ export const useAnalytics = () => {
     trackSocialMediaClick: trackSocial,
     trackPerformance: trackPerf,
     trackError: trackErr,
-    isDevelopment: isDevelopmentMode()
+    isDevelopment: isDevelopmentMode(),
   };
 };

@@ -1,4 +1,4 @@
-import { Variants } from 'framer-motion';
+import { Variants } from "framer-motion";
 
 /**
  * Animation configurations for Framer Motion
@@ -38,7 +38,7 @@ export const sectionRevealVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      type: 'spring',
+      type: "spring",
       bounce: 0.4,
       duration: 0.8,
     },
@@ -67,16 +67,16 @@ export const buttonHoverVariants: Variants = {
     scale: 1,
     transition: {
       duration: 0.2,
-      type: 'tween' as const,
-      ease: 'easeIn',
+      type: "tween" as const,
+      ease: "easeIn",
     },
   },
   hover: {
     scale: 1.05,
     transition: {
       duration: 0.3,
-      type: 'tween' as const,
-      ease: 'easeOut',
+      type: "tween" as const,
+      ease: "easeOut",
     },
   },
   tap: {
@@ -92,7 +92,7 @@ export const loadingSpinnerVariants: Variants = {
       rotate: {
         duration: 1,
         repeat: Infinity,
-        ease: 'linear' as const,
+        ease: "linear" as const,
       },
     },
   },
@@ -104,7 +104,7 @@ export const pulseVariants = {
     transition: {
       duration: 1.5,
       repeat: Infinity,
-      ease: 'easeInOut',
+      ease: "easeInOut",
     },
   },
 };
@@ -116,7 +116,7 @@ export const fadeInVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -129,7 +129,7 @@ export const slideInFromLeft: Variants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -141,7 +141,7 @@ export const slideInFromRight: Variants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -153,15 +153,15 @@ export const slideInFromTop: Variants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
 
 // Utility function to check for reduced motion preference
 export const shouldReduceMotion = (): boolean => {
-  if (typeof window === 'undefined') return false;
-  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 };
 
 // Utility function to get reduced motion variants

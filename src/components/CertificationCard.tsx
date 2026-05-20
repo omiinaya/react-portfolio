@@ -1,5 +1,5 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 interface CertificationCardProps {
   certification: {
@@ -17,7 +17,9 @@ interface CertificationCardProps {
   };
 }
 
-const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) => {
+const CertificationCard: React.FC<CertificationCardProps> = ({
+  certification,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -33,12 +35,14 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
               onError={(e) => {
                 // Fallback to placeholder if image fails to load
                 const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.nextElementSibling?.classList.remove('hidden');
+                target.style.display = "none";
+                target.nextElementSibling?.classList.remove("hidden");
               }}
             />
           ) : null}
-          <div className={`image-placeholder ${certification.image ? 'hidden' : ''}`}>
+          <div
+            className={`image-placeholder ${certification.image ? "hidden" : ""}`}
+          >
             <svg
               width="60"
               height="60"
@@ -83,22 +87,30 @@ const CertificationCard: React.FC<CertificationCardProps> = ({ certification }) 
         <div className="certification-actions">
           {/* Verification Button - Always shown but conditionally disabled */}
           <button
-            className={`btn btn-primary ${!certification.url?.href ? 'btn-disabled' : ''}`}
+            className={`btn btn-primary ${!certification.url?.href ? "btn-disabled" : ""}`}
             onClick={() => {
               if (certification.url?.href) {
-                window.open(certification.url.href, '_blank', 'noopener,noreferrer');
+                window.open(
+                  certification.url.href,
+                  "_blank",
+                  "noopener,noreferrer",
+                );
               }
             }}
             disabled={!certification.url?.href}
-            title={!certification.url?.href ? t('certifications.noVerificationLink') : t('certifications.verify')}
+            title={
+              !certification.url?.href
+                ? t("certifications.noVerificationLink")
+                : t("certifications.verify")
+            }
           >
-            {t('certifications.verify')}
+            {t("certifications.verify")}
           </button>
         </div>
 
         {/* Date */}
         <p className="certification-date">
-          {t('certifications.issued')}: {certification.date}
+          {t("certifications.issued")}: {certification.date}
         </p>
       </div>
     </div>

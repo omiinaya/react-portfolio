@@ -1,5 +1,5 @@
-import React, { createContext, useContext, ReactNode } from 'react';
-import profileData from '../data/profile.json';
+import React, { createContext, useContext, ReactNode } from "react";
+import profileData from "../data/profile.json";
 
 export interface ProfileData {
   basics: {
@@ -113,7 +113,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
 export const useData = (): DataContextType => {
   const context = useContext(DataContext);
   if (context === undefined) {
-    throw new Error('useData must be used within a DataProvider');
+    throw new Error("useData must be used within a DataProvider");
   }
   return context;
 };

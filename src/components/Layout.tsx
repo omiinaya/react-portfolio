@@ -1,14 +1,18 @@
-import React, { ReactNode, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { HelmetProvider } from 'react-helmet-async';
-import { useLocation } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import BackToTop from './BackToTop';
-import SEO from './SEO';
-import { ThemeProvider } from '../contexts/ThemeContext';
-import { DataProvider } from '../contexts/DataContext';
-import { initializeAnalytics, trackPageView, isDevelopmentMode } from '../utils/analytics';
+import React, { ReactNode, useEffect } from "react";
+import { motion } from "framer-motion";
+import { HelmetProvider } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import BackToTop from "./BackToTop";
+import SEO from "./SEO";
+import { ThemeProvider } from "../contexts/ThemeContext";
+import { DataProvider } from "../contexts/DataContext";
+import {
+  initializeAnalytics,
+  trackPageView,
+  isDevelopmentMode,
+} from "../utils/analytics";
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,13 +20,13 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
-  
+
   // Initialize analytics on component mount
   useEffect(() => {
     const isInitialized = initializeAnalytics();
-    
+
     if (isInitialized && !isDevelopmentMode()) {
-      console.log('Google Analytics initialized successfully');
+      console.log("Google Analytics initialized successfully");
     }
   }, []);
 

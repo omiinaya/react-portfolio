@@ -10,8 +10,8 @@ interface ScrollOptions {
 
 const defaultOptions: ScrollOptions = {
   duration: 800,
-  easing: (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t, // quadratic easing
-  offset: 0
+  easing: (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t), // quadratic easing
+  offset: 0,
 };
 
 /**
@@ -19,21 +19,23 @@ const defaultOptions: ScrollOptions = {
  */
 export const smoothScrollTo = (
   target: HTMLElement | string,
-  options: Partial<ScrollOptions> = {}
+  options: Partial<ScrollOptions> = {},
 ): void => {
   const { duration, easing, offset } = { ...defaultOptions, ...options };
-  
-  const targetElement = typeof target === 'string' 
-    ? document.querySelector(target) as HTMLElement
-    : target;
-  
+
+  const targetElement =
+    typeof target === "string"
+      ? (document.querySelector(target) as HTMLElement)
+      : target;
+
   if (!targetElement) {
-    console.warn('Smooth scroll target not found:', target);
+    console.warn("Smooth scroll target not found:", target);
     return;
   }
 
   const startPosition = window.pageYOffset;
-  const targetPosition = targetElement.getBoundingClientRect().top + startPosition - offset;
+  const targetPosition =
+    targetElement.getBoundingClientRect().top + startPosition - offset;
   const distance = targetPosition - startPosition;
   let startTime: number | null = null;
 
@@ -41,10 +43,10 @@ export const smoothScrollTo = (
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
-    
+
     const easeProgress = easing(progress);
     window.scrollTo(0, startPosition + distance * easeProgress);
-    
+
     if (timeElapsed < duration) {
       requestAnimationFrame(animation);
     }
@@ -58,24 +60,30 @@ export const smoothScrollTo = (
  */
 export const initSmoothScrolling = (): void => {
   // Remove the native smooth scroll behavior
-  document.documentElement.style.scrollBehavior = 'auto';
-  
+  document.documentElement.style.scrollBehavior = "auto";
+
   // Add click event listeners to all navigation links
   const navLinks = document.querySelectorAll('a[href^="#"]');
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      
-      if (href && href !== '#') {
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+
+      if (href && href !== "#") {
         e.preventDefault();
-        
+
         // Add a small delay for a more polished feel
         setTimeout(() => {
           smoothScrollTo(href, {
             duration: 1000, // Slightly longer duration for smoother feel
-            easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1, // cubic easing
-            offset: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80
+            easing: (t) =>
+              t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1, // cubic easing
+            offset:
+              parseInt(
+                getComputedStyle(document.documentElement).getPropertyValue(
+                  "--header-height",
+                ),
+              ) || 80,
           });
         }, 50);
       }
@@ -88,7 +96,7 @@ export const initSmoothScrolling = (): void => {
  */
 export const scrollToTop = (options: Partial<ScrollOptions> = {}): void => {
   const { duration, easing } = { ...defaultOptions, ...options };
-  
+
   const startPosition = window.pageYOffset;
   const distance = -startPosition;
   let startTime: number | null = null;
@@ -97,10 +105,10 @@ export const scrollToTop = (options: Partial<ScrollOptions> = {}): void => {
     if (startTime === null) startTime = currentTime;
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
-    
+
     const easeProgress = easing(progress);
     window.scrollTo(0, startPosition + distance * easeProgress);
-    
+
     if (timeElapsed < duration) {
       requestAnimationFrame(animation);
     }

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { scrollToTop } from '../utils/smoothScroll';
-import '../styles/theme.css';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { scrollToTop } from "../utils/smoothScroll";
+import "../styles/theme.css";
 
 const BackToTop: React.FC = () => {
   const { t } = useTranslation();
@@ -16,23 +16,24 @@ const BackToTop: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const handleClick = () => {
     scrollToTop({
       duration: 1000,
-      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+      easing: (t) =>
+        t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
     });
   };
 
   return (
     <button
-      className={`back-to-top ${isVisible ? 'back-to-top--visible' : ''}`}
+      className={`back-to-top ${isVisible ? "back-to-top--visible" : ""}`}
       onClick={handleClick}
-      aria-label={t('backToTop.ariaLabel')}
+      aria-label={t("backToTop.ariaLabel")}
     >
       <svg
         width="20"

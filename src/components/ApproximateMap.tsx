@@ -1,5 +1,5 @@
-import React from 'react';
-import { useData } from '../contexts/DataContext';
+import React from "react";
+import { useData } from "../contexts/DataContext";
 
 const ApproximateMap: React.FC = () => {
   const { profile } = useData();
@@ -19,7 +19,7 @@ const ApproximateMap: React.FC = () => {
           scrolling="no"
           marginHeight={0}
           marginWidth={0}
-          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lng-0.1}%2C${lat-0.1}%2C${lng+0.1}%2C${lat+0.1}&layer=mapnik&marker=${lat}%2C${lng}`}
+          src={`https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.1}%2C${lat - 0.1}%2C${lng + 0.1}%2C${lat + 0.1}&layer=mapnik&marker=${lat}%2C${lng}`}
           title="Approximate Location Map"
         />
       </div>

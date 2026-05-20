@@ -1,28 +1,29 @@
-import React, { ButtonHTMLAttributes } from 'react';
-import { motion } from 'framer-motion';
-import { shouldReduceMotion } from '../utils/animations';
+import React, { ButtonHTMLAttributes } from "react";
+import { motion } from "framer-motion";
+import { shouldReduceMotion } from "../utils/animations";
 
 interface AnimatedButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
   children: React.ReactNode;
 }
 
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   children,
-  variant = 'primary',
-  size = 'md',
-  className = '',
+  variant = "primary",
+  size = "md",
+  className = "",
   onClick,
-  type = 'button',
+  type = "button",
   disabled,
   ...props
 }) => {
-  const baseClasses = 'btn';
+  const baseClasses = "btn";
   const variantClass = `btn-${variant}`;
   const sizeClass = `btn-${size}`;
-  
-  const fullClassName = `${baseClasses} ${variantClass} ${sizeClass} ${className}`.trim();
+
+  const fullClassName =
+    `${baseClasses} ${variantClass} ${sizeClass} ${className}`.trim();
 
   if (shouldReduceMotion()) {
     return (

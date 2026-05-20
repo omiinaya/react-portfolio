@@ -1,14 +1,14 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
-import { useData } from '../contexts/DataContext';
+import React from "react";
+import { Helmet } from "react-helmet-async";
+import { useData } from "../contexts/DataContext";
 import {
   SEOData,
   generateMetaTags,
   generatePersonStructuredData,
   generatePortfolioStructuredData,
   getDefaultSEOData,
-  sanitizeForMeta
-} from '../utils/seo';
+  sanitizeForMeta,
+} from "../utils/seo";
 
 interface SEOProps {
   title?: string;
@@ -16,7 +16,7 @@ interface SEOProps {
   keywords?: string[];
   image?: string;
   url?: string;
-  type?: 'website' | 'article' | 'profile';
+  type?: "website" | "article" | "profile";
   structuredData?: any[];
   excludeDefaultStructuredData?: boolean;
 }
@@ -29,13 +29,13 @@ const SEO: React.FC<SEOProps> = ({
   url,
   type,
   structuredData = [],
-  excludeDefaultStructuredData = false
+  excludeDefaultStructuredData = false,
 }) => {
   const { profile } = useData();
-  
+
   // Get default SEO data
   const defaultSEOData = getDefaultSEOData(profile);
-  
+
   // Merge with provided props
   const seoData: SEOData = {
     title: title || defaultSEOData.title,
@@ -48,17 +48,19 @@ const SEO: React.FC<SEOProps> = ({
     siteName: defaultSEOData.siteName,
     twitterCard: defaultSEOData.twitterCard,
     twitterCreator: defaultSEOData.twitterCreator,
-    twitterSite: defaultSEOData.twitterSite
+    twitterSite: defaultSEOData.twitterSite,
   };
 
   // Generate meta tags
   const metaTags = generateMetaTags(seoData);
 
   // Generate default structured data if not excluded
-  const defaultStructuredData = excludeDefaultStructuredData ? [] : [
-    generatePersonStructuredData(profile),
-    generatePortfolioStructuredData(profile)
-  ];
+  const defaultStructuredData = excludeDefaultStructuredData
+    ? []
+    : [
+        generatePersonStructuredData(profile),
+        generatePortfolioStructuredData(profile),
+      ];
 
   // Combine all structured data
   const allStructuredData = [...defaultStructuredData, ...structuredData];
@@ -67,12 +69,12 @@ const SEO: React.FC<SEOProps> = ({
     <Helmet>
       {/* Title */}
       <title>{seoData.title}</title>
-      
+
       {/* Meta tags */}
       {metaTags.map((tag, index) => (
         <meta key={index} {...tag} />
       ))}
-      
+
       {/* Structured data */}
       {allStructuredData.map((data, index) => (
         <script
@@ -81,10 +83,10 @@ const SEO: React.FC<SEOProps> = ({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
         />
       ))}
-      
+
       {/* Canonical URL */}
       <link rel="canonical" href={seoData.url} />
-      
+
       {/* Language */}
       <html lang="en" />
     </Helmet>

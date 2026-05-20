@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useTheme } from '../contexts/ThemeContext';
-import { smoothScrollTo, scrollToTop } from '../utils/smoothScroll';
-import HamburgerMenu from './HamburgerMenu';
-import { trackLanguageChange, isDevelopmentMode } from '../utils/analytics';
-import '../styles/theme.css';
+import React, { useCallback, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "../contexts/ThemeContext";
+import { smoothScrollTo, scrollToTop } from "../utils/smoothScroll";
+import HamburgerMenu from "./HamburgerMenu";
+import { trackLanguageChange, isDevelopmentMode } from "../utils/analytics";
+import "../styles/theme.css";
 
 const Header: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -15,22 +15,29 @@ const Header: React.FC = () => {
   const handleNavClick = useCallback((targetId: string) => {
     smoothScrollTo(targetId, {
       duration: 1000,
-      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
-      offset: parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height')) || 80
+      easing: (t) =>
+        t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
+      offset:
+        parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue(
+            "--header-height",
+          ),
+        ) || 80,
     });
   }, []);
 
   const handleLogoClick = useCallback(() => {
     scrollToTop({
       duration: 1000,
-      easing: (t) => t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+      easing: (t) =>
+        t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
     });
   }, []);
 
   const handleLanguageChange = (language: string) => {
     i18n.changeLanguage(language);
     setIsLanguageDropdownOpen(false);
-    
+
     // Track language change
     if (!isDevelopmentMode()) {
       trackLanguageChange(language);
@@ -59,26 +66,41 @@ const Header: React.FC = () => {
               className="logo-button"
               aria-label="Scroll to top"
             >
-              <h1 className="logo">{t('header.logo')}</h1>
+              <h1 className="logo">{t("header.logo")}</h1>
             </button>
           </div>
-          
+
           <div className="nav-menu">
-          <button onClick={() => handleNavClick('#hero')} className="nav-link">{t('header.about')}</button>
-          {/* 
+            <button
+              onClick={() => handleNavClick("#hero")}
+              className="nav-link"
+            >
+              {t("header.about")}
+            </button>
+            {/* 
           <button onClick={() => handleNavClick('#experience')} className="nav-link">{t('header.experience')}</button>
           */}
-          {/* <button onClick={() => handleNavClick('#projects')} className="nav-link">{t('header.projects')}</button> */}
-          <button onClick={() => handleNavClick('#certifications')} className="nav-link">{t('header.certifications')}</button>
-          <button onClick={() => handleNavClick('#contact')} className="nav-link">{t('header.contact')}</button>
-        </div>
-          
+            {/* <button onClick={() => handleNavClick('#projects')} className="nav-link">{t('header.projects')}</button> */}
+            <button
+              onClick={() => handleNavClick("#certifications")}
+              className="nav-link"
+            >
+              {t("header.certifications")}
+            </button>
+            <button
+              onClick={() => handleNavClick("#contact")}
+              className="nav-link"
+            >
+              {t("header.contact")}
+            </button>
+          </div>
+
           <div className="nav-actions">
             {/* Mobile Menu Toggle */}
             <button
               onClick={toggleMobileMenu}
               className="hamburger-toggle"
-              aria-label={t('header.mobileMenu')}
+              aria-label={t("header.mobileMenu")}
               aria-expanded={isMobileMenuOpen}
             >
               <span className="hamburger-line"></span>
@@ -91,7 +113,7 @@ const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="github-link"
-              aria-label={t('header.github')}
+              aria-label={t("header.github")}
             >
               <svg
                 width="20"
@@ -112,7 +134,7 @@ const Header: React.FC = () => {
               <button
                 onClick={toggleLanguageDropdown}
                 className="language-toggle"
-                aria-label={t('header.language')}
+                aria-label={t("header.language")}
                 aria-expanded={isLanguageDropdownOpen}
               >
                 <svg
@@ -128,20 +150,20 @@ const Header: React.FC = () => {
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
               </button>
-              
+
               {isLanguageDropdownOpen && (
                 <div className="language-dropdown">
                   <button
-                    onClick={() => handleLanguageChange('en')}
-                    className={`language-option ${i18n.language === 'en' ? 'active' : ''}`}
+                    onClick={() => handleLanguageChange("en")}
+                    className={`language-option ${i18n.language === "en" ? "active" : ""}`}
                   >
-                    {t('languages.en')}
+                    {t("languages.en")}
                   </button>
                   <button
-                    onClick={() => handleLanguageChange('es')}
-                    className={`language-option ${i18n.language === 'es' ? 'active' : ''}`}
+                    onClick={() => handleLanguageChange("es")}
+                    className={`language-option ${i18n.language === "es" ? "active" : ""}`}
                   >
-                    {t('languages.es')}
+                    {t("languages.es")}
                   </button>
                 </div>
               )}
@@ -151,7 +173,7 @@ const Header: React.FC = () => {
             <button
               onClick={toggleTheme}
               className="theme-toggle"
-              aria-label={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+              aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
             >
               {isDarkMode ? (
                 <svg
@@ -188,12 +210,9 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </div>
-      
+
       {/* Mobile Navigation Menu */}
-      <HamburgerMenu
-        isOpen={isMobileMenuOpen}
-        onClose={closeMobileMenu}
-      />
+      <HamburgerMenu isOpen={isMobileMenuOpen} onClose={closeMobileMenu} />
     </header>
   );
 };

@@ -1,20 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { shouldReduceMotion } from '../utils/animations';
+import React from "react";
+import { motion } from "framer-motion";
+import { shouldReduceMotion } from "../utils/animations";
 
 interface LoadingSpinnerProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   className?: string;
 }
 
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
-  size = 'md',
-  className = ''
+  size = "md",
+  className = "",
 }) => {
   const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-8 h-8',
-    lg: 'w-12 h-12'
+    sm: "w-4 h-4",
+    md: "w-8 h-8",
+    lg: "w-12 h-12",
   };
 
   if (shouldReduceMotion()) {
@@ -27,12 +27,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
           stroke="currentColor"
           strokeWidth="2"
         >
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            className="opacity-25"
-          />
+          <circle cx="12" cy="12" r="10" className="opacity-25" />
           <path
             className="opacity-75"
             fill="currentColor"
@@ -47,7 +42,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     <motion.div
       className={`flex items-center justify-center ${className}`}
       animate={{ rotate: 360 }}
-      transition={{ rotate: { duration: 1, repeat: Infinity, ease: 'linear' } }}
+      transition={{ rotate: { duration: 1, repeat: Infinity, ease: "linear" } }}
     >
       <svg
         className={`${sizeClasses[size]} text-primary`}
@@ -56,12 +51,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
         stroke="currentColor"
         strokeWidth="2"
       >
-        <circle
-          cx="12"
-          cy="12"
-          r="10"
-          className="opacity-25"
-        />
+        <circle cx="12" cy="12" r="10" className="opacity-25" />
         <path
           className="opacity-75"
           fill="currentColor"
