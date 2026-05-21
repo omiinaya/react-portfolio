@@ -14,16 +14,18 @@ The semgrep security audit completed successfully with **0 findings**. The proje
 ## Scan Details
 
 ### Scan Scope
+
 - **Files Scanned:** 64 files tracked by git
 - **Rules Executed:** 231 rules
 - **Languages Analyzed:**
   - TypeScript (166 rules, 39 files)
-  - JavaScript (156 rules, 2 files) 
+  - JavaScript (156 rules, 2 files)
   - JSON (4 rules, 8 files)
   - HTML (1 rule, 1 file)
   - Multi-language (61 rules, 64 files)
 
 ### Scan Configuration
+
 - **Rule Set:** Semgrep Community Registry (auto-configured)
 - **Total Code Rules Available:** 1,064
 - **Parsing Success Rate:** ~100%
@@ -32,7 +34,7 @@ The semgrep security audit completed successfully with **0 findings**. The proje
 ## Findings Summary
 
 | Category | Critical | High | Medium | Low | Total |
-|----------|----------|------|--------|-----|-------|
+| -------- | -------- | ---- | ------ | --- | ----- |
 | Results  | 0        | 0    | 0      | 0   | **0** |
 
 ### Blocking Findings: 0
@@ -44,11 +46,13 @@ No blocking issues were detected that would prevent code deployment or require i
 The following files were analyzed during the scan:
 
 ### Configuration Files
+
 - `.env`, `.env.example`, `.gitignore`
 - `package.json`, `package-lock.json`
 - `tsconfig.json`, `vercel.json`
 
 ### Source Code
+
 - **Components** (14 files): AnimatedButton, AnimatedPage, AnimatedSection, ApproximateMap, BackToTop, CertificationCard, ContactPanel, Footer, FormStatus, HamburgerMenu, Header, Layout, LoadingSpinner, SEO
 - **Sections** (7 files): About, Certifications, Contact, Experience, Hero, Projects
 - **Contexts** (2 files): DataContext, ThemeContext
@@ -56,9 +60,11 @@ The following files were analyzed during the scan:
 - **Utilities** (6 files): analytics, animations, seo, smoothScroll, validation, test files
 
 ### Assets & Public Files
+
 - HTML, CSS, image files, manifest, robots.txt
 
 ### Documentation & Tests
+
 - README.md, enhancement plans, contact panel documentation
 - Test files for components and utilities
 
@@ -67,6 +73,7 @@ The following files were analyzed during the scan:
 Based on the semgrep scan results, this React portfolio project demonstrates:
 
 ### ✅ Strengths
+
 - No common security vulnerabilities detected
 - Clean code structure with proper TypeScript typing
 - Good separation of concerns (components, contexts, services, utilities)
@@ -75,6 +82,7 @@ Based on the semgrep scan results, this React portfolio project demonstrates:
 - Proper input validation utilities present
 
 ### 📋 Code Quality Indicators
+
 - Comprehensive component architecture
 - Proper state management with React contexts
 - SEO optimization utilities
@@ -98,4 +106,4 @@ The semgrep security audit indicates **a healthy, clean codebase** with no appar
 
 ---
 
-*This report was generated using Semgrep OSS with the community rule set. For additional commercial rules and advanced security analysis, consider upgrading to Semgrep Registry Pro.*
+_This report was generated using Semgrep OSS with the community rule set. For additional commercial rules and advanced security analysis, consider upgrading to Semgrep Registry Pro._

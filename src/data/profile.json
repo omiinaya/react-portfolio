@@ -56,7 +56,14 @@
             "label": "",
             "href": "https://www.credential.net/f0cf59e9-957e-4e02-8763-c8d26ff7967c"
           },
-          "skills": ["React", "Node.js", "JavaScript", "HTML", "CSS", "Databases"],
+          "skills": [
+            "React",
+            "Node.js",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Databases"
+          ],
           "image": "/images/certifications/full-stack-developer.png"
         },
         {
@@ -70,7 +77,12 @@
             "label": "",
             "href": "https://www.credly.com/badges/04194236-3c8a-40bc-93ec-726c83c6ca80/"
           },
-          "skills": ["Troubleshooting", "Virtualization", "Operating Systems", "Networking"],
+          "skills": [
+            "Troubleshooting",
+            "Virtualization",
+            "Operating Systems",
+            "Networking"
+          ],
           "image": "/images/certifications/a-plus.png"
         },
         {
@@ -84,7 +96,12 @@
             "label": "",
             "href": "https://www.credly.com/badges/ba683a31-cd8c-4ccc-85f3-af95f265b1be"
           },
-          "skills": ["Cloud Computing", "Security", "IT Infrastructure", "Troubleshooting"],
+          "skills": [
+            "Cloud Computing",
+            "Security",
+            "IT Infrastructure",
+            "Troubleshooting"
+          ],
           "image": "/images/certifications/tech-plus.png"
         },
         {
@@ -168,7 +185,12 @@
             "label": "",
             "href": ""
           },
-          "skills": ["Installation", "Configuration", "Troubleshooting", "Control4"],
+          "skills": [
+            "Installation",
+            "Configuration",
+            "Troubleshooting",
+            "Control4"
+          ],
           "image": "/images/certifications/associate-installer.png"
         }
       ]
@@ -330,46 +352,46 @@
       "visible": true,
       "id": "projects",
       "items": [
-         {
-           "id": "1",
-           "visible": true,
-           "name": "PC Test Online",
-           "description": "A web application for testing various computer parts online.",
-           "technologies": ["React", "TypeScript", "CSS3"],
-           "githubUrl": "https://github.com/omiinaya/react-weather",
-           "liveUrl": "https://pctestonline.com",
-           "image": "https://cdn.mrxlab.net/api/cdn/download/images/pctestonline.png"
-         },
-         {
-           "id": "2",
-           "visible": true,
-           "name": "Weather App",
-           "description": "A responsive weather application with location-based forecasts and interactive charts.",
-           "technologies": ["React", "TypeScript", "ChartJS", "OpenWeather API"],
-           "githubUrl": "https://github.com/omiinaya/react-weather",
-           "liveUrl": "https://weather.mrxlab.net",
-           "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
-         },
-         {
-           "id": "3",
-           "visible": true,
-           "name": "E-Commerce Platform",
-           "description": "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
-           "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
-           "githubUrl": "https://github.com/omiinaya/ecommerce-platform",
-           "liveUrl": "https://ecommerce-demo.example.com",
-           "image": "/images/projects/ecommerce-platform.png"
-         },
-         {
-           "id": "4",
-           "visible": true,
-           "name": "Portfolio Website",
-           "description": "A modern portfolio website with dark mode support and responsive design.",
-           "technologies": ["React", "TypeScript", "CSS3", "Vite"],
-           "githubUrl": "https://github.com/omiinaya/portfolio",
-           "liveUrl": "https://portfolio-demo.example.com",
-           "image": "/images/projects/portfolio-website.png"
-         }
+        {
+          "id": "1",
+          "visible": true,
+          "name": "PC Test Online",
+          "description": "A web application for testing various computer parts online.",
+          "technologies": ["React", "TypeScript", "CSS3"],
+          "githubUrl": "https://github.com/omiinaya/react-weather",
+          "liveUrl": "https://pctestonline.com",
+          "image": "https://cdn.mrxlab.net/api/cdn/download/images/pctestonline.png"
+        },
+        {
+          "id": "2",
+          "visible": true,
+          "name": "Weather App",
+          "description": "A responsive weather application with location-based forecasts and interactive charts.",
+          "technologies": ["React", "TypeScript", "ChartJS", "OpenWeather API"],
+          "githubUrl": "https://github.com/omiinaya/react-weather",
+          "liveUrl": "https://weather.mrxlab.net",
+          "image": "https://cdn.mrxlab.net/api/cdn/download/images/weather.png"
+        },
+        {
+          "id": "3",
+          "visible": true,
+          "name": "E-Commerce Platform",
+          "description": "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.",
+          "technologies": ["React", "Node.js", "MongoDB", "Stripe"],
+          "githubUrl": "https://github.com/omiinaya/ecommerce-platform",
+          "liveUrl": "https://ecommerce-demo.example.com",
+          "image": "/images/projects/ecommerce-platform.png"
+        },
+        {
+          "id": "4",
+          "visible": true,
+          "name": "Portfolio Website",
+          "description": "A modern portfolio website with dark mode support and responsive design.",
+          "technologies": ["React", "TypeScript", "CSS3", "Vite"],
+          "githubUrl": "https://github.com/omiinaya/portfolio",
+          "liveUrl": "https://portfolio-demo.example.com",
+          "image": "/images/projects/portfolio-website.png"
+        }
       ]
     },
     "publications": {
@@ -442,11 +464,7 @@
       "font": {
         "family": "IBM Plex Serif",
         "subset": "latin",
-        "variants": [
-          "regular",
-          "italic",
-          "600"
-        ],
+        "variants": ["regular", "italic", "600"],
         "size": 14
       },
       "lineHeight": 1.5,

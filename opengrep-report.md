@@ -14,16 +14,18 @@ The OpenGrep security audit completed successfully with **0 findings**. The proj
 ## Scan Details
 
 ### Scan Scope
+
 - **Files Scanned:** 65 files tracked by git
 - **Rules Executed:** 231 rules
 - **Languages Analyzed:**
   - TypeScript (166 rules, 39 files)
-  - JavaScript (156 rules, 2 files) 
+  - JavaScript (156 rules, 2 files)
   - JSON (4 rules, 8 files)
   - HTML (1 rule, 1 file)
   - Multi-language (61 rules, 65 files)
 
 ### Scan Configuration
+
 - **Rule Set:** OpenGrep Community Registry (auto-configured)
 - **Total Code Rules Available:** 1,064
 - **Scan Duration:** ~6 seconds
@@ -31,7 +33,7 @@ The OpenGrep security audit completed successfully with **0 findings**. The proj
 ## Findings Summary
 
 | Category | Critical | High | Medium | Low | Total |
-|----------|----------|------|--------|-----|-------|
+| -------- | -------- | ---- | ------ | --- | ----- |
 | Results  | 0        | 0    | 0      | 0   | **0** |
 
 ### Blocking Findings: 0
@@ -43,11 +45,13 @@ No blocking issues were detected that would prevent code deployment or require i
 OpenGrep scanned all 65 files tracked by git, including:
 
 ### Configuration Files
+
 - `.env`, `.env.example`, `.gitignore`
 - `package.json`, `package-lock.json`
 - `tsconfig.json`, `vercel.json`
 
 ### Source Code
+
 - **Components** (14 files): AnimatedButton, AnimatedPage, AnimatedSection, ApproximateMap, BackToTop, CertificationCard, ContactPanel, Footer, FormStatus, HamblergerMenu, Header, Layout, LoadingSpinner, SEO
 - **Sections** (7 files): About, Certifications, Contact, Experience, Hero, Projects
 - **Contexts** (2 files): DataContext, ThemeContext
@@ -55,9 +59,11 @@ OpenGrep scanned all 65 files tracked by git, including:
 - **Utilities** (6 files): analytics, animations, seo, smoothScroll, validation, test files
 
 ### Assets & Public Files
+
 - HTML, CSS, image files, manifest, robots.txt
 
 ### Documentation & Tests
+
 - README.md, enhancement plans, contact panel documentation
 - Test files for components and utilities
 
@@ -66,6 +72,7 @@ OpenGrep scanned all 65 files tracked by git, including:
 Based on the OpenGrep scan results, this React portfolio project demonstrates:
 
 ### ✅ Strengths
+
 - No common security vulnerabilities detected
 - Clean code structure with proper TypeScript typing
 - Good separation of concerns (components, contexts, services, utilities)
@@ -74,6 +81,7 @@ Based on the OpenGrep scan results, this React portfolio project demonstrates:
 - Proper input validation utilities present
 
 ### 📋 Code Quality Indicators
+
 - Comprehensive component architecture
 - Proper state management with React contexts
 - SEO optimization utilities
@@ -83,18 +91,19 @@ Based on the OpenGrep scan results, this React portfolio project demonstrates:
 
 ## Comparison with Semgrep
 
-| Metric | OpenGrep | Semgrep |
-|--------|----------|---------|
-| **Version** | 1.16.0 | 1.151.0 |
-| **Files Scanned** | 65 | 64 |
-| **Rules Executed** | 231 | 231 |
-| **Total Findings** | 0 | 0 |
-| **Critical** | 0 | 0 |
-| **High** | 0 | 0 |
-| **Medium** | 0 | 0 |
-| **Low** | 0 | 0 |
+| Metric             | OpenGrep | Semgrep |
+| ------------------ | -------- | ------- |
+| **Version**        | 1.16.0   | 1.151.0 |
+| **Files Scanned**  | 65       | 64      |
+| **Rules Executed** | 231      | 231     |
+| **Total Findings** | 0        | 0       |
+| **Critical**       | 0        | 0       |
+| **High**           | 0        | 0       |
+| **Medium**         | 0        | 0       |
+| **Low**            | 0        | 0       |
 
 ### Key Differences
+
 1. **Files Scanned**: OpenGrep scanned 65 files vs Semgrep's 64 files (includes `semgrep-report.md`)
 2. **Version**: OpenGrep 1.16.0 vs Semgrep 1.151.0
 3. **Performance**: Both tools completed scans in approximately the same time (~6 seconds)
@@ -103,6 +112,7 @@ Based on the OpenGrep scan results, this React portfolio project demonstrates:
 ## About OpenGrep
 
 OpenGrep is an open-source fork of Semgrep that maintains the OSS codebase and continues community-driven development. It provides:
+
 - Same rule syntax and configuration as Semgrep
 - Community-maintained security rules
 - Cross-platform support
@@ -126,4 +136,4 @@ Both Semgrep and OpenGrep produced consistent results, confirming the codebase i
 
 ---
 
-*This report was generated using OpenGrep OSS v1.16.0 with the community rule set. For additional rules and advanced security analysis, consider exploring the OpenGrep rule registry.*
+_This report was generated using OpenGrep OSS v1.16.0 with the community rule set. For additional rules and advanced security analysis, consider exploring the OpenGrep rule registry._

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,35 +9,41 @@
       name="description"
       content="Omar Minaya - Full Stack Developer portfolio showcasing React, TypeScript, and full-stack development projects. Based in Miami, FL."
     />
-    <meta name="keywords" content="portfolio, developer, full stack, react, typescript, javascript, miami, software engineer" />
+    <meta
+      name="keywords"
+      content="portfolio, developer, full stack, react, typescript, javascript, miami, software engineer"
+    />
     <meta name="author" content="Omar Minaya" />
     <meta name="robots" content="index, follow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Omar Minaya Portfolio" />
     <meta property="og:locale" content="en_US" />
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@omiinaya" />
     <meta name="twitter:creator" content="@omiinaya" />
-    
+
     <!-- Favicon and App Icons -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    
+
     <!-- Preload critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
+
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    
+
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -47,7 +53,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    
+
     <!-- Fallback title (will be overridden by React Helmet) -->
     <title>Omar Minaya - Full Stack Developer</title>
   </head>
@@ -56,22 +62,22 @@
     <div id="root"></div>
     <script>
       // Polyfill for :focus-visible in older browsers
-      (function() {
+      (function () {
         // Check if :focus-visible is supported
         try {
-          document.querySelector(':focus-visible');
+          document.querySelector(":focus-visible");
         } catch (error) {
           // Add class when keyboard is used for navigation
-          document.addEventListener('keydown', function() {
-            document.body.classList.add('keyboard-navigation');
+          document.addEventListener("keydown", function () {
+            document.body.classList.add("keyboard-navigation");
           });
-          
-          document.addEventListener('mousedown', function() {
-            document.body.classList.remove('keyboard-navigation');
+
+          document.addEventListener("mousedown", function () {
+            document.body.classList.remove("keyboard-navigation");
           });
-          
+
           // Add fallback CSS for older browsers
-          var style = document.createElement('style');
+          var style = document.createElement("style");
           style.textContent = `
             .keyboard-navigation .nav-link:focus,
             .keyboard-navigation .theme-toggle:focus,

@@ -12,10 +12,10 @@
 
 Both Semgrep and OpenGrep security audits completed without detecting any security vulnerabilities. The project maintains excellent code quality and security standards across all scanned files.
 
-| Tool | Version | Files Scanned | Rules Run | Findings | Status |
-|------|---------|---------------|-----------|----------|--------|
-| **Semgrep** | 1.151.0 | 66 | 231 | **0** | ✅ PASSED |
-| **OpenGrep** | 1.16.0 | 66 | 231 | **0** | ✅ PASSED |
+| Tool         | Version | Files Scanned | Rules Run | Findings | Status    |
+| ------------ | ------- | ------------- | --------- | -------- | --------- |
+| **Semgrep**  | 1.151.0 | 66            | 231       | **0**    | ✅ PASSED |
+| **OpenGrep** | 1.16.0  | 66            | 231       | **0**    | ✅ PASSED |
 
 ---
 
@@ -30,34 +30,36 @@ Both tools now scan **66 files** (increased from previous scans due to the addit
 - **Current scan:** 66 files
 
 The file count increased because:
+
 - `semgrep-report.md` was created
 - `opengrep-report.md` was created
 - Both are now tracked by git and scanned
 
 ### Scan Configuration
 
-| Metric | Semgrep | OpenGrep |
-|--------|---------|----------|
-| **Config** | auto | auto |
-| **Total Rules Available** | 1,064 | 1,064 |
-| **Rules Executed** | 231 | 231 |
-| **Rule Coverage** | Community | Community |
+| Metric                    | Semgrep   | OpenGrep  |
+| ------------------------- | --------- | --------- |
+| **Config**                | auto      | auto      |
+| **Total Rules Available** | 1,064     | 1,064     |
+| **Rules Executed**        | 231       | 231       |
+| **Rule Coverage**         | Community | Community |
 
 ### Language Breakdown
 
-| Language | Rules | Files | Files Analyzed |
-|----------|-------|-------|----------------|
-| TypeScript | 166 | 39 | 39 |
-| JavaScript | 156 | 2 | 2 |
-| JSON | 4 | 8 | 8 |
-| HTML | 1 | 1 | 1 |
-| Multi-language | 61 | 66 | 66 |
+| Language       | Rules | Files | Files Analyzed |
+| -------------- | ----- | ----- | -------------- |
+| TypeScript     | 166   | 39    | 39             |
+| JavaScript     | 156   | 2     | 2              |
+| JSON           | 4     | 8     | 8              |
+| HTML           | 1     | 1     | 1              |
+| Multi-language | 61    | 66    | 66             |
 
 ---
 
 ## Performance Metrics
 
 ### Semgrep Performance
+
 - **Total Scan Time:** ~7.0 seconds
 - **Config Load Time:** 3.04 seconds
 - **Core Processing Time:** 3.98 seconds
@@ -66,6 +68,7 @@ The file count increased because:
 - **Max Memory Usage:** ~1.87 GB
 
 ### OpenGrep Performance
+
 - **Scan Time:** ~6 seconds (estimated)
 - **Rule Set:** 1,064 available, 231 executed
 - **Files Scanned:** 66
@@ -76,6 +79,7 @@ The file count increased because:
 ## Scanned Files Breakdown
 
 ### Configuration Files (6 files)
+
 - `.env` - Environment variables
 - `.env.example` - Environment variable template
 - `.gitignore` - Git ignore rules
@@ -85,6 +89,7 @@ The file count increased because:
 - `vercel.json` - Vercel deployment config
 
 ### Documentation Files (4 files)
+
 - `README.md` - Project documentation
 - `docs/ENHANCEMENTS-PLAN.md` - Enhancement roadmap
 - `docs/PROFESSIONAL-CONTACT-PANEL.md` - Contact panel specs
@@ -94,6 +99,7 @@ The file count increased because:
 ### Source Code Files (39 files)
 
 #### Components (14 files)
+
 - `src/components/AnimatedButton.tsx`
 - `src/components/AnimatedPage.tsx`
 - `src/components/AnimatedSection.tsx`
@@ -111,6 +117,7 @@ The file count increased because:
 - `src/components/SocialLinks.tsx`
 
 #### Sections (7 files)
+
 - `src/sections/About.tsx`
 - `src/sections/Certifications.tsx`
 - `src/sections/Contact.tsx`
@@ -119,13 +126,16 @@ The file count increased because:
 - `src/sections/Projects.tsx`
 
 #### Contexts (2 files)
+
 - `src/contexts/DataContext.tsx`
 - `src/contexts/ThemeContext.tsx`
 
 #### Services (1 file)
+
 - `src/services/emailService.ts`
 
 #### Utilities (8 files)
+
 - `src/utils/analytics.ts`
 - `src/utils/animations.ts`
 - `src/utils/seo.ts`
@@ -135,14 +145,17 @@ The file count increased because:
 - `src/utils/testSmoothScroll.ts`
 
 #### Hooks (1 file)
+
 - `src/hooks/useAnalytics.ts`
 
 #### Data & Types (3 files)
+
 - `src/data/profile.json`
 - `src/types/index.ts`
 - `src/styles/theme.css`
 
 #### Core App Files (6 files)
+
 - `src/App.tsx`
 - `src/App.css`
 - `src/App.test.tsx`
@@ -151,11 +164,13 @@ The file count increased because:
 - `src/setupTests.ts`
 
 #### Internationalization (3 files)
+
 - `src/i18n.ts`
 - `src/locales/en/translation.json`
 - `src/locales/es/translation.json`
 
 ### Public Assets (8 files)
+
 - `public/index.html`
 - `public/favicon.ico`
 - `public/logo192.png`
@@ -165,6 +180,7 @@ The file count increased because:
 - `src/logo.svg`
 
 ### Scripts (1 file)
+
 - `scripts/generate-sitemap.js`
 
 ---
@@ -173,17 +189,18 @@ The file count increased because:
 
 ### Vulnerability Categories
 
-| Severity | Semgrep | OpenGrep |
-|----------|---------|----------|
-| **Critical** | 0 | 0 |
-| **High** | 0 | 0 |
-| **Medium** | 0 | 0 |
-| **Low** | 0 | 0 |
-| **Total** | **0** | **0** |
+| Severity     | Semgrep | OpenGrep |
+| ------------ | ------- | -------- |
+| **Critical** | 0       | 0        |
+| **High**     | 0       | 0        |
+| **Medium**   | 0       | 0        |
+| **Low**      | 0       | 0        |
+| **Total**    | **0**   | **0**    |
 
 ### Security Posture Assessment
 
 #### ✅ Strengths Identified
+
 1. **No Injection Vulnerabilities**: No SQL injection, XSS, or command injection patterns detected
 2. **No Hardcoded Secrets**: No API keys, passwords, or tokens found in source code
 3. **Proper Input Validation**: Validation utilities present in `src/utils/validation.ts`
@@ -194,6 +211,7 @@ The file count increased because:
 8. **No Insecure Dependencies**: No known vulnerable dependency patterns
 
 #### 📋 Code Quality Indicators
+
 - **Modular Architecture**: Clear separation of concerns
 - **TypeScript Integration**: Strong typing throughout
 - **Testing Setup**: Test utilities and configurations present
@@ -208,20 +226,21 @@ The file count increased because:
 
 ### Semgrep vs OpenGrep
 
-| Feature | Semgrep | OpenGrep |
-|---------|---------|----------|
-| **License** | Commercial + OSS | Pure OSS |
-| **Version** | 1.151.0 | 1.16.0 |
-| **Community** | Semgrep Inc. | Open source community |
-| **Rule Registry** | Semgrep Registry | Community Registry |
-| **Execution Speed** | ~7.0s | ~6s |
-| **Memory Usage** | ~1.87 GB | Similar |
-| **Config Compatibility** | Semgrep format | Semgrep format |
-| **Commercial Features** | Available | N/A |
+| Feature                  | Semgrep          | OpenGrep              |
+| ------------------------ | ---------------- | --------------------- |
+| **License**              | Commercial + OSS | Pure OSS              |
+| **Version**              | 1.151.0          | 1.16.0                |
+| **Community**            | Semgrep Inc.     | Open source community |
+| **Rule Registry**        | Semgrep Registry | Community Registry    |
+| **Execution Speed**      | ~7.0s            | ~6s                   |
+| **Memory Usage**         | ~1.87 GB         | Similar               |
+| **Config Compatibility** | Semgrep format   | Semgrep format        |
+| **Commercial Features**  | Available        | N/A                   |
 
 ### Results Consistency
 
 **Excellent Consistency**: Both tools produced identical results
+
 - Same number of rules executed (231)
 - Same file count (66)
 - Same number of findings (0)
@@ -239,6 +258,7 @@ The file count increased because:
 ## Recommendations
 
 ### Immediate Actions
+
 - ✅ **No Immediate Actions Required**: No security issues detected
 
 ### Ongoing Security Practices
@@ -313,4 +333,4 @@ opengrep --config=auto --json .
 
 ---
 
-*End of Report*
+_End of Report_
